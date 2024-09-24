@@ -2,6 +2,8 @@
 
 Este repositorio incluye actividades llevadas a cabo en el módulo "Servicios-de-red-e-Internet"
 
+![texto](/img/tux.png)
+
 ## TEMA 1
 |  Ejercicio  |  Descripción  |
 | ------------- | ------------- |
