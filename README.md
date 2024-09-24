@@ -1,6 +1,6 @@
 # Servicios-de-red-e-Internet
 
-Este repositorio incluye actividades llevadas a cabo en el módulo "Servicios-de-red-e-Internet"
+Este repositorio incluye actividades llevadas a cabo en el módulo *_Servicios-de-red-e-Internet_*
 
 ![texto](/img/tux.png)
 
