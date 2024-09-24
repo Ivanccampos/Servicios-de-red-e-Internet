@@ -32,5 +32,5 @@ Este repositorio incluye actividades llevadas a cabo en el módulo **_Servicios-
 |  Ejercicio  |  Descripción  |
 | ------------- | ------------- |
 | Ejercicio 1 | Content Cell  |
-| Ejercicio 2 | Content Cell  |
+| Ejercicio 2 | Content Cell modificado desde visual studio |
 
