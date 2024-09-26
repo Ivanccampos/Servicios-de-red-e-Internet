@@ -38,4 +38,6 @@ Cuando accedemos al buscador y si buscamos "localhost:8000" podemos ver nuestra 
 
 ![img4](/Actividad0/imagenes/check.png)
 
-Esta página puede ser visualizada por otros usuarios si escribien en su buscador ---------- .
+Esta página puede ser visualizada por otros usuarios si escribien en su buscador "dirección_ip_del_host:puerto".
+
+![img4](/Actividad0/imagenes/check.png)
