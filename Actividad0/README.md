@@ -6,7 +6,7 @@ Descargamos python para nuestro equipo, activamos el servidor de Apache mediante
 
 Si está hecho de forma correcta podemos ver que se ha creado un servidor y que accedemos a la página de Apache.
 
-![img1](/Actividad0/imagenes/index.png)
+![img1](/Actividad0/imagenes/act1.png)
 
 Si no hemos activado Apache previo a acceder al servidor, la página web por defecto nos mostrará nuestra carpeta de usuario.
 
