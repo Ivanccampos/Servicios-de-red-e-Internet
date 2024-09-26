@@ -2,17 +2,17 @@
 
 Descargar python y ejecutar localhost
 
-![texto](/imágenes/act1.png)
+![img1](/imágenes/act1.png)
 
 ##Actividad 0.2
 
 Crear un server en python y compartirlo en clase
 
-![texto](/index/act1.png)
+![img2](/imágenes/index.png)
 
 
-![texto](/create/act1.png)
+![img3](/imágenes/create.png)
 
 
-![texto](/check/act1.png)
+![img4](/imágenes/check.png)
 
