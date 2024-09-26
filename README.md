@@ -4,11 +4,10 @@ Este repositorio incluye actividades llevadas a cabo en el módulo **_Servicios-
 
 ![texto](/img/tux.png)
 
-## TEMA 1
+## TEMA 0
 |  Ejercicio  |  Descripción  |
 | ------------- | ------------- |
-| Ejercicio 1 | Content Cell  |
-| Ejercicio 2 | [ejemplo de enlace](https://courses.cs.washington.edu/courses/cse163/20wi/files/lectures/L04/bee-movie.txt)  |
+| Ejercicio 1 | Varios ejercicio relacionados con python |
 
 ## TEMA 2
 |  Ejercicio  |  Descripción  |
