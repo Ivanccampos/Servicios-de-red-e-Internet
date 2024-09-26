@@ -40,4 +40,4 @@ Cuando accedemos al buscador y si buscamos "localhost:8000" podemos ver nuestra 
 
 Esta página puede ser visualizada por otros usuarios si escribien en su buscador "dirección_ip_del_host:puerto".
 
-![img4](/Actividad0/imagenes/check.png)
+![img4](/Actividad0/imagenes/check2.png)
