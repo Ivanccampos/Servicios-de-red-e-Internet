@@ -8,7 +8,7 @@ Si está hecho de forma correcta podemos ver que se ha creado un servidor y que 
 
 ![img1](/Actividad0/imagenes/act1.png)
 
-Si no hemos activado Apache previo a acceder al servidor, la página web por defecto nos mostrará nuestra carpeta de usuario
+Si no hemos activado Apache previo a acceder al servidor, la página web por defecto nos mostrará nuestra carpeta de usuario.
 
 ![img1](/Actividad0/imagenes/error.png)
 
@@ -16,12 +16,12 @@ Si no hemos activado Apache previo a acceder al servidor, la página web por def
 
 ## Crear un server en python y compartirlo en clase
 
-Vamos a crear un pequecho archivo html y lo vamos a guradar en la carpeta de usuario de nuestro equipo.
+Vamos a crear un pequeño archivo html y lo vamos a guardar en la carpeta de usuario de nuestro equipo.
 
 ![img2](/Actividad0/imagenes/index.png)
 
-Un vex creado el archivo podemos activar Apache y crear un servidor para mostrar la página mediante el comando "server.py".
-Por defecto nos asigna el puerto 8000
+Un vex creado el archivo podemos activar Apache y crear un servidor para mostrar la página mediante el comando "server.py" ó "python -m http.server 8000"
+Por defecto "server.py" nos asigna el puerto 8000.
 
 ![img3](/Actividad0/imagenes/create.png)
 
