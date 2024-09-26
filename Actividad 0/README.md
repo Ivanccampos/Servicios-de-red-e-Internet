@@ -2,7 +2,7 @@
 
 Descargar python y ejecutar localhost
 
-![img1](Actividad 0/imagenes/act1.png)
+![img1](Servicios-de-red-e-Internet/Actividad 0/imagenes/act1.png)
 
 ##Actividad 0.2
 
