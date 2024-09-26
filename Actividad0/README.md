@@ -20,7 +20,15 @@ Vamos a crear un pequeño archivo html y lo vamos a guardar en la carpeta de usu
 
 ![img2](/Actividad0/imagenes/index.png)
 
-Un vex creado el archivo podemos activar Apache y crear un servidor para mostrar la página mediante el comando "server.py" ó "python -m http.server 8000"
+Un vex creado el archivo podemos activar Apache y crear un servidor para mostrar la página mediante el comando 
+```
+server.py
+´´´
+ ó 
+ 
+ ```
+ python -m http.server 8000
+ ´´´
 Por defecto "server.py" nos asigna el puerto 8000.
 
 ![img3](/Actividad0/imagenes/create.png)
