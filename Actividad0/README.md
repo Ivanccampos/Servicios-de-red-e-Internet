@@ -126,12 +126,10 @@ TCP
 ¿Qué aplicaciones usan tcp?  
 
 HTTP, FTP, SMTP, SSH, pop, imap y Telnet.
-https://www.sapalomera.cat/moodlecf/RS/1/course/module7/7.2.4.1/7.2.4.1.html
 
 ¿Qué aplicaciones usan udp?
 
 DHCP, DNS, SNMP, TFTP, VoIP, IPTV
-https://www.sapalomera.cat/moodlecf/RS/1/course/module7/7.2.4.2/7.2.4.2.html
 
 ¿Qué capa almacena el puerto?
 
@@ -151,6 +149,8 @@ La dirección IP se almacena en la capa de red (Capa 3) del modelo OSI
 ## Práctica telnet/http
 Lee el artículo y prueba los ejemplos sugeridos en él.
 
+![img1](/Actividad0/imagenes/0.3.png)
+
 # Actividad 0.4
 
 ## Usando Curl
@@ -161,21 +161,25 @@ Busca información sobre el comando curl y muestra al menos cinco ejemplos de us
 
 Obtener la página principal de un servidor web.
 
+![img1](/Actividad0/imagenes/0.41.png)
 
+![img1](/Actividad0/imagenes/0.42.png)
 
 Obtener una página y guardarla en un archivo local
 
-
+![img1](/Actividad0/imagenes/0.43.png)
 
 Los 100 primeros bits de un documento
 
+![img1](/Actividad0/imagenes/0.44.png)
 
 Los 500 últimos bits de un documento
 
+![img1](/Actividad0/imagenes/0.45.png)
 
 Obtenga una página web y almacene en un archivo local, haga que el archivo local obtenga el nombre del documento remoto
 
-
+![img1](/Actividad0/imagenes/0.46.png)
 
 
 
