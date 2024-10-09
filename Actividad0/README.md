@@ -8,7 +8,7 @@ El primer servidor web se creó en el CERN, Suiza, en 1989-1990. El inventor del
 
 ### ¿Qué pila de protocolos usa http?
 
-	TCPIP
+TCPIP
 
 
 ### ¿Componentes de una URL? 
@@ -21,7 +21,7 @@ El primer servidor web se creó en el CERN, Suiza, en 1989-1990. El inventor del
 
 ### ¿Pasos en la recuperación de una página web mediante HTTP?  
 
-	Mediante peticiones de mensaje/respuesta, normalmente de tipo GET.
+Mediante peticiones de mensaje/respuesta, normalmente de tipo GET.
 
 	
 ### Diferencia entre páginas dinámicas y estáticas.
@@ -83,7 +83,7 @@ Los códigos de estado de respuesta HTTP indican si se ha completado satisfactor
 ### Content type. Tipos principales
 	
 
-	El content type, también conocido como media type o MIME type (extensiones de correo de Internet multipropósito), es un recurso que se utiliza en la cabecera HTTP (header) y que le indica al cliente o navegador qué clase de archivo o medio le está enviando el servidor.
+El content type, también conocido como media type o MIME type (extensiones de correo de Internet multipropósito), es un recurso que se utiliza en la cabecera HTTP (header) y que le indica al cliente o navegador qué clase de archivo o medio le está enviando el servidor.
 
 Dicho así, especificar el tipo de contenido ayuda a los user agents a entender el contexto y mejorar significativamente la experiencia de usabilidad, al mostrar el archivo o medio de la mejor forma posible.
 
@@ -141,7 +141,7 @@ La dirección IP se almacena en la capa de red (Capa 3) del modelo OSI
 
 ### ¿Qué es three-way handshake?
 
-	El proceso de negociación entre dos equipos para establecer una conexión en el protocolo TCP.
+El proceso de negociación entre dos equipos para establecer una conexión en el protocolo TCP.
 
 
 # Actividad 0.3
