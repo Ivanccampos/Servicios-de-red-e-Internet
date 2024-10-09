@@ -149,7 +149,7 @@ La dirección IP se almacena en la capa de red (Capa 3) del modelo OSI
 ## Práctica telnet/http
 Lee el artículo y prueba los ejemplos sugeridos en él.
 
-![img1](/Actividad0/imagenes/0.3.png)
+![img1](/Actividad0/images/0.3.png)
 
 # Actividad 0.4
 
@@ -161,25 +161,25 @@ Busca información sobre el comando curl y muestra al menos cinco ejemplos de us
 
 Obtener la página principal de un servidor web.
 
-![img1](/Actividad0/imagenes/0.41.png)
+![img1](/Actividad0/images/0.41.png)
 
-![img1](/Actividad0/imagenes/0.42.png)
+![img1](/Actividad0/images/0.42.png)
 
 Obtener una página y guardarla en un archivo local
 
-![img1](/Actividad0/imagenes/0.43.png)
+![img1](/Actividad0/images/0.43.png)
 
 Los 100 primeros bits de un documento
 
-![img1](/Actividad0/imagenes/0.44.png)
+![img1](/Actividad0/images/0.44.png)
 
 Los 500 últimos bits de un documento
 
-![img1](/Actividad0/imagenes/0.45.png)
+![img1](/Actividad0/images/0.45.png)
 
 Obtenga una página web y almacene en un archivo local, haga que el archivo local obtenga el nombre del documento remoto
 
-![img1](/Actividad0/imagenes/0.46.png)
+![img1](/Actividad0/images/0.46.png)
 
 
 
@@ -194,18 +194,18 @@ Descargamos python para nuestro equipo, activamos el servidor de Apache mediante
 
 Si está hecho de forma correcta podemos ver que se ha creado un servidor y que accedemos a la página de Apache.
 
-![img1](/Actividad0/imagenes/act1.png)
+![img1](/Actividad0/images/act1.png)
 
 Si no hemos activado Apache previo a acceder al servidor, la página web por defecto nos mostrará nuestra carpeta de usuario.
 
-![img1](/Actividad0/imagenes/error.png)
+![img1](/Actividad0/images/error.png)
 
 
 ## Crear un server en python y compartirlo en clase
 
 Vamos a crear un pequeño archivo html y lo vamos a guardar en la carpeta de usuario de nuestro equipo.
 
-![img2](/Actividad0/imagenes/index.png)
+![img2](/Actividad0/images/index.png)
 
 Un vex creado el archivo podemos activar Apache y crear un servidor para mostrar la página mediante el comando 
 ```python
@@ -219,12 +219,12 @@ server.py
  ```
 Por defecto "server.py" nos asigna el puerto 8000.
 
-![img3](/Actividad0/imagenes/create.png)
+![img3](/Actividad0/images/create.png)
 
 Cuando accedemos al buscador y si buscamos "localhost:8000" podemos ver nuestra página web.
 
-![img4](/Actividad0/imagenes/check.png)
+![img4](/Actividad0/images/check.png)
 
 Esta página puede ser visualizada por otros usuarios si escribien en su buscador "dirección_ip_del_host:puerto".
 
-![img4](/Actividad0/imagenes/check2.png)
+![img4](/Actividad0/images/check2.png)
