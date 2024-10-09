@@ -7,7 +7,7 @@ Este repositorio incluye actividades llevadas a cabo en el módulo **_Servicios-
 ## [TEMA 0](Actividad0/README.md) 
 |  Ejercicio  |  Descripción  |
 | ------------- | ------------- |
-| [Actividad 0.1](README.md#actividad-01) | Varios ejercicio relacionados con python |
+| [Actividad 0.1](/Actividad0/README.md#actividad-01) | Varios ejercicio relacionados con python |
 | [Actividad 0.2](README.md#actividad-02) | Varios ejercicio relacionados con UDP y TCP |
 | [Actividad 0.3](README.md#actividad-03) | Varios ejercicio relacionados con telnet/http |
 | [Actividad 0.4](README.md#actividad-04)| Varios ejercicio relacionados con Curl |
