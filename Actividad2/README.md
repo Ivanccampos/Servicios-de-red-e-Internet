@@ -2,11 +2,29 @@
 
 ## Pon en marcha el servidor Apache y lleva a cabo los siguientes cambios en el archivo de configuración.
 
+
+
 ### Apache utilizará el puerto 81 además del 80
 
+![img1](/Actividad1/images/101.png)
+![img1](/Actividad1/images/102.png)
+![img1](/Actividad1/images/103.png)
+![img1](/Actividad1/images/104.png)
+![img1](/Actividad1/images/105.png)
+![img1](/Actividad1/images/106.png)
+![img1](/Actividad1/images/107.png)
+![img1](/Actividad1/images/108.png)
+
+
 ### Añadir el dominio “marisma.intranet” en el fichero “hosts”
+![img1](/Actividad1/images/109.png)
+![img1](/Actividad1/images/110.png)
+![img1](/Actividad1/images/111.png)
 
 ### Cambia la directiva “ServerTokens” para mostrar el nombre del producto
+![img1](/Actividad1/images/112.png)
+![img1](/Actividad1/images/113.png)
+![img1](/Actividad1/images/114.png)
 
 ### Haz que se visualice el pie de página de Apache en tu navegador
 
