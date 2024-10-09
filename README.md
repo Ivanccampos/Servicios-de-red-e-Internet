@@ -15,7 +15,7 @@ Este repositorio incluye actividades llevadas a cabo en el módulo **_Servicios-
 ## TEMA 2
 |  Ejercicio  |  Descripción  |
 | ------------- | ------------- |
-| ![Ejercicio 1](Actividad0/README.md) | Content Cell  |
+| [Ejercicio 1](Actividad0/README.md) | Content Cell  |
 | Ejercicio 2 | Content Cell  |
 
 ## TEMA 3
