@@ -16,8 +16,8 @@ Este repositorio incluye actividades llevadas a cabo en el módulo **_Servicios-
 ## [TEMA 1](Actividad1/README.md) 
 |  Ejercicio  |  Descripción  |
 | ------------- | ------------- |
-| [Ejercicio 1](/main/Actividad1/README.md#la-arquitectura-web-es-un-modelo-compuesto-de-tres-capas-cuáles-son-y-cuál-es--la-función-de-cada-una-de-ellas) | Content Cell  |
-| [Ejercicio 2](Actividad1/README.md#las-plataformas-web-lamp-y-wisa-son-dos-de-las-más-populares-y-difundidas-en-el-mercado-utilizadas-para-desarrollar-sitios-web-dinámicos-y-aplicaciones-web-a-continuación-se-describe-cada-una-de-ellas) | Content Cell  |
+| [Ejercicio 1](/Actividad1/README.md#la-arquitectura-web-es-un-modelo-compuesto-de-tres-capas-cuáles-son-y-cuál-es--la-función-de-cada-una-de-ellas) | Content Cell  |
+| [Ejercicio 2](/Actividad1/README.md#las-plataformas-web-lamp-y-wisa-son-dos-de-las-más-populares-y-difundidas-en-el-mercado-utilizadas-para-desarrollar-sitios-web-dinámicos-y-aplicaciones-web-a-continuación-se-describe-cada-una-de-ellas) | Content Cell  |
 | [Ejercicio 3](/Actividad1/README.md#instala-la-pila-linux-apache-mysql-y-php-lamp-en-ubuntu) | Content Cell  |
 
 ## [TEMA 2](Actividad2/README.md) 
