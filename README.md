@@ -9,9 +9,6 @@ Este repositorio incluye actividades llevadas a cabo en el módulo **_Servicios-
 | ------------- | ------------- |
 | Ejercicio 1 | Varios ejercicio relacionados con python |
 
-
-
-
 ## [TEMA 1](Actividad1/README.md) 
 |  Ejercicio  |  Descripción  |
 | ------------- | ------------- |
