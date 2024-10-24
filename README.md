@@ -23,7 +23,7 @@ Este repositorio incluye actividades llevadas a cabo en el módulo **_Servicios-
 ## [TEMA 2](Actividad2/README.md) 
 |  Ejercicio  |  Descripción  |
 | ------------- | ------------- |
-| [Ejercicio 1](https://github.com/Ivanccampos/Servicios-de-red-e-Internet/tree/main/Actividad2#pon-en-marcha-el-servidor-apache-y-lleva-a-cabo-los-siguientes-cambios-en-el-archivo-de-configuraci%C3%B3n)  | Pon en marcha el servidor Apache y lleva a cabo los siguientes cambios en el archivo de configuración. |
+| [Ejercicio 1](https://github.com/Ivanccampos/Servicios-de-red-e-Internet/tree/main/Actividad2#pon-en-marcha-el-servidor-apache-y-lleva-a-cabo-los-siguientes-cambios-en-el-archivo-de-configuraci%C3%B3n)  | Pon en marcha el servidor Apache y lleva a cabo los siguientes cambios. |
 | [Ejercicio 2](https://github.com/Ivanccampos/Servicios-de-red-e-Internet/tree/main/Actividad2#crea-un-script-para-cada-uno-de-los-siguientes-problemas) | Crea un script para cada uno de los siguientes problemas  |
 
 ## TEMA 3
