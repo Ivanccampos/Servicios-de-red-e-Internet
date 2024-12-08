@@ -1,160 +1,594 @@
+ Práctica Servidores Web - 1º Trimestre
 
-Vamos a instalar un servidor web interno para un instituto. Se Pide:
-●	Instalación del servidor web apache. Usaremos dos dominios mediante el archivo hosts: centro.intranet y departamentos.centro.intranet. El primero servirá el contenido mediante wordpress y el segundo una aplicación en python
-●	Activar los módulos necesarios para ejecutar php y acceder a mysql
-●	Instala y configura wordpress
 
-Instalar y configurar el servidor web Apache
-El primer paso para configurar el stack de LAMP es instalar y configurar el servidor Apache. En primer lugar, tenemos que actualizar la lista de paquetes de tu sistema y actualizar los paquetes a la versión más reciente
+## Instalación del servidor web Apache
 
+### Instalación de Apache en Ubuntu
+
+1. Abrimos una terminal
+
+2. Actualizamos los paquetes instalados
+`````
 sudo apt update
-
-Ahora es el momento de instalar el servidor web Apache2
-
+`````
+3. Instalamos las nuevas versiones
+````
+sudo apt upgrade
+````
+4. Instalamos el paquete de Apache
+`````
 sudo apt install apache2
+`````
+5. Ajustamos el Firewall para Apache con los siguientes dos comandos:
+`````
+sudo ufw app list
+`````
+`````
+sudo ufw allow "Apache"
+`````
+6. Comprobar en nuestro navegador la siguiente dirección
+````
+https://localhost
+````
+Si hemos seguido los pasos habremos instalado correctamente Apache2 para Ubuntu
+<br>
+
+<img src="../Tema 1/rsc/img/apachecinstall1.png" alt="index" width="570"/>
+
+<br>
 
 
-Instalar PHP
-PHP es necesario para que WordPress se comunique con la base de datos MySQL y muestre contenido dinámico. También necesitarás instalar extensiones PHP adicionales para WordPress.
-Ejecuta el siguiente comando para instalar PHP y las extensiones de PHP a la vez:
+## Activación de los módulos necesarios para PhP y MySQL
+
+### Instalación de MySQL
+
+1. Instalamos MySQL-server
+
+`````
+sudo apt install mysql-server
+`````
+2. Comprobamos, entrando a MySQL con el siguiente comando:
+`````
+sudo mysql 
+`````
+3. Para salir de MySQL:
+`````
+exit
+`````
+<br>
+
+## Instalación y configuración Wordpress
+
+### Instalamos las dependencias para Wordpress
+
+Ejecutamos los siguientes comandos:
+
+`````
+sudo apt install -y php8.1-cli php8.1-fpm php8.1-mysql
+`````
+
+### Instalamos Wordpress
+
+1. Descargamos el archivo de instalación de Wordpress:
+
+````
+wget https://es.wordpress.org/latest.zip
+````
+
+2. Extraemos los archivos
+
+````
+sudo unzip latest.zip
+````
+
+Si necesitamos el comando unzip lo podemos instalar con el siguiente comando:
+
+````
+sudo apt install unzip
+````
+
+3. Movemos los contenidos de Wordpress a la carpeta del dominio
+
+````
+sudo mv wordpress/* /var/www/html/
+````
+
+4. Cambiamos los permisos de la carpeta
+
+````
+sudo chown -R www-data:www-data /var/www/html/*
+````
 
 
-sudo apt install php libapache2-mod-php php-mysql php-curl php-gd php-xml php-mbstring php-xmlrpc php-zip php-soap php-intl -y
+<br>
 
+<br>
 
-Configurar MySQL y crear una base de datos
-Una vez que tengas el servidor web en funcionamiento, puedes instalar la base de datos MySQL.
+### Creación y modificación de un archivo de configuración para Wordpress
 
+1. Creamos el archivo de configuración
 
-apt install mysql-server -y
+````
+sudo nano /etc/apache2/sites-available/wordpress.conf
+````
+2. Editamos con lo siguiente:
 
-Después de instalar MySQL en tu VPS, abre el terminal de MySQL escribiendo el siguiente comando:
-
-sudo mysql
-
-Puedes establecer una contraseña para el usuario root mediante el siguiente comando:
-
-mysql> ALTER USER 'root'@'localhost' IDENTIFIED WITH 
-mysql_native_password BY 'Password';
-
-
-Para reflejar estos cambios, usa el comando Flush como se muestra a continuación:
-mysql> FLUSH PRIVILEGES;
-Utiliza el siguiente comando para crear una base de datos de WordPress:
-mysql> CREATE DATABASE WordPressBD DEFAULT CHARACTER SET utf8 COLLATE utf8_unicode_ci;
-Ahora, crearemos una cuenta de usuario MySQL para operar en la nueva base de datos de WordPress. Utilizaremos WordPressDB como nombre de la base de datos y UsuarioWordPress como nombre de usuario. Para crear un nuevo usuario y otorgar privilegios usa el siguiente comando:
-GRANT ALL ON WordPressBD.* TO ' UsuarioWordPress '@'localhost' IDENTIFIED BY 'NuevaContraseña';
-Proporciona una contraseña segura en lugar de NuevaContraseña. Para reflejar estos cambios, usa el comando:
-mysql> FLUSH PRIVILEGES;
-Una vez que hayas terminado, sal de la pantalla de MySQL escribiendo este comando:
-mysql> EXIT;
-
-
-
-
-
-4. Prepárate para instalar WordPress en Ubuntu
-Es el momento de preparar la instalación de WordPress creando un archivo de configuración de WordPress y un directorio de WordPress.
-Creando un archivo de WordPress.conf
-Crea un archivo de configuración, por ejemplo: WordPress.conf. Colócalo en /etc/apache2/sites-available/. Esta será una réplica del archivo de configuración predeterminado que ya existe en esta ubicación. Utiliza el siguiente comando:
-nano /etc/apache2/sites-available/WordPress.conf
-Una vez que ejecutes ese comando, accederás al editor de texto Nano para editar el archivo WordPress.conf. Activa el .htaccess añadiendo estas líneas al bloque VirtualHost:
-&lt;Directory /var/www/wordpress /&gt;
-&nbsp;&nbsp;AllowOverride All
-&lt;/Directory&gt;
-Cierra y guarda el archivo pulsando CTRL+X. Pulsa Y y Enter cuando se te pida.
-Crear un directorio para WordPress
-A continuación, crea un directorio para WordPress en /var/www/. En nuestro ejemplo, su ruta completa será /var/www/wordpress. Para ello, utiliza el comando mkdir para crear el directorio:
-mkdir /var/www/wordpress
-Ahora, activa el mod_rewrite para utilizar la función de permalink o enlace permanente de WordPress ejecutando el siguiente comando en el terminal:
-sudo a2enmod rewrite
-Tendrás que reiniciar el servidor web Apache utilizando el siguiente comando:
-systemctl restart apache2
-El siguiente paso es cambiar la directiva ServerName en el archivo /etc/apache2/apache2.conf. Abre el archivo con este comando:
-nano /etc/apache2/apache2.conf
-Tendrás que configurar la directiva ServerName con la dirección IP o el nombre del servidor añadiendo la siguiente línea al archivo /etc/apache2/apache2.conf:
-ServerName <Your IP Address>
-Cierra y guarda el archivo.
-Ahora, tienes que comprobar si la configuración de Apache es correcta ejecutando el siguiente comando en el terminal:
-apachectl configtest
-Si la configuración funciona bien, debería imprimir la siguiente salida:
-Syntax OK
-
-
-
-
-
-
-
-
-
-
-
-●	Activar el módulo “wsgi” para permitir la ejecución de aplicaciones Python
-●	Crea y despliega una pequeña aplicación python para comprobar que funciona correctamente.
-●	Adicionalmente protegeremos el acceso a la aplicación python mediante autenticación
-
-
-
-•  Instalar el módulo WSGI para Apache
-Para Python 3, instala el paquete libapache2-mod-wsgi-py3:
-bash
-Copiar código
-sudo apt update
-sudo apt install libapache2-mod-wsgi-py3
-•  Activar el módulo WSGI
-Una vez instalado, habilita el módulo WSGI usando el siguiente comando:
-bash
-Copiar código
-sudo a2enmod wsgi
-•  Reiniciar Apache
-Para que los cambios surtan efecto, reinicia el servidor Apache:
-bash
-Copiar código
-sudo systemctl restart apache2
-•  Configurar Apache para tu aplicación Python
-Edita el archivo de configuración de tu sitio (por ejemplo, /etc/apache2/sites-available/tu-sitio.conf) para incluir la configuración WSGI. Por ejemplo:
-apache
-Copiar código
+````
 <VirtualHost *:80>
-    ServerName tu-dominio.com
-    DocumentRoot /ruta/a/tu/proyecto
-
-    # Archivo WSGI para tu aplicación
-    WSGIScriptAlias / /ruta/a/tu/proyecto/tuapp.wsgi
-
-    <Directory /ruta/a/tu/proyecto>
-        Require all granted
-    </Directory>
-
-    # Configuración del entorno Python
-    WSGIDaemonProcess tuapp python-path=/ruta/a/tu/proyecto python-home=/ruta/a/entorno/virtual
-    WSGIProcessGroup tuapp
+    DocumentRoot /var/www/html
+    ServerName wordpress.local
+    ServerAdmin admin@localhost
 </VirtualHost>
-•	WSGIScriptAlias apunta al archivo .wsgi de tu aplicación (ver ejemplo más abajo).
-•	python-path indica el directorio raíz del proyecto.
-•	python-home se usa si tienes un entorno virtual configurado.
-•  Crear un archivo WSGI para tu aplicación
-Este archivo será el punto de entrada para tu aplicación. Un ejemplo básico es:
-python
-Copiar código
-import sys
-sys.path.insert(0, "/ruta/a/tu/proyecto")
+````
 
-from tuapp import app as application
-•	Reemplaza tuapp y app según tu aplicación.
-•  Verificar la configuración
-Revisa que no haya errores en la configuración de Apache:
-bash
-Copiar código
-sudo apachectl configtest
-Si todo está bien, reinicia Apache nuevamente:
-bash
-Copiar código
-sudo systemctl restart apache2
+<br>
+
+3. Habilitamos la página de Wordpress
+
+<br>
+
+````
+sudo a2ensite wordpress
+````
+
+<br>
+
+4. Deshabilitamos la página por defecto de Apache
+
+<br>
+
+````
+sudo a2dissite 000-default
+````
+
+<br>
+
+5. Añadimos el dominio al fichero hosts
+
+<br>
+
+````
+sudo nano /etc/hosts
+````
+
+<img src="../Practica 1º Trimestre/rsc/img/hosts.png" alt="index" width="570"/>
 
 
+<br>
 
+6. Recargamos Apache
 
-●	Instala y configura awstat.
-●	Instala un segundo servidor de tu elección (nginx, lighttpd) bajo el dominio “servidor2.centro.intranet”. Debes configurarlo para que sirva en el puerto 8080 y haz los cambios necesarios para ejecutar php. Instala phpmyadmin.
+<br>
+
+````
+sudo service Apache2 reload
+````
+
+<br>
+
+### Configuración de la base de datos
+<br>
+
+Accedemos a MySQL como administradrores
+
+````
+sudo mysql -u root
+````
+<br>
+
+Creamos nuestra base datos, en este caso el nombre será wordpress
+````
+CREATE DATABASE wordpress;
+````
+<br>
+Creamos un usuario admin para MySQL 
+
+````
+CREATE USER 'admin'@'localhost'  IDENTIFIED  BY 'admin';
+````
+<br>
+Otorgamos todos los privilegios al usuario admin
+
+````
+GRANT ALL PRIVILEGES -> ON wordpress.* -> TO 'admin'@'localhost';
+````
+<br>
+Actualizamos los privilegios de nuestra base de datos
+
+````
+FLUSH PRIVILEGES;
+````
+<br>
+Cerramos la sesión de MySQL
+
+````
+quit
+````
+<br>
+
+<img src="../Practica 1º Trimestre/rsc/img/database.png" alt="index" width="570"/>
+
+<br>
+
+### Configurar la conexión entre Wordpress y la base de datos
+
+<br>
+
+Copiamos la configuracion por defecto de wordpress en el archivo wp-config-sample.php a wp-config.php
+
+````
+sudo -u www-data cp /var/www/html/wp-config-sample.php /var/www/html/wp-config.php
+````
+
+Modificamos el archivo de configuración de WordPress para que se conecte a la base de datos que creamos anteriormente.
+
+````
+sudo -u www-data nano /srv/www/wordpress/wp-config.php
+````
+
+Dentro del documento , debemos cambiar los siguientes valores por aquellos que definimos en nuestra base de datos:
+
+````
+define( 'DB_NAME',          'Nombre_Base_Datos' );
+define( 'DB_USER',          'Nombre_Usuario' );
+define( 'DB_PASSWORD',      'Contraseña' );
+````
+
+<br>
+<br>
+
+### Configuración de Wordpress
+
+Ingresamos a nuestro dominio y comenzamos la configuración básica de Wordpress.
+Seleccionamos el idioma.
+
+<img src="../Practica 1º Trimestre/rsc/img/wordpress.png" alt="index" width="570"/>
+
+Continuamos con la configuración, añadimos nombre a nuestro sitio, correo electrónico y contraseña de administrador.
+
+<img src="../Practica 1º Trimestre/rsc/img/wordpress3.png" alt="index" width="570"/>
+
+Habremos finalizado la configuración básica de Wordpress.
+
+<img src="../Practica 1º Trimestre/rsc/img/wordpress4.png" alt="index" width="570"/>
+
+Accedemos a la página de inicio de Wordpress e ingresamos con nuestras credenciales.
+
+<img src="../Practica 1º Trimestre/rsc/img/wordpress5.png" alt="index" width="570"/>
+
+Finalmente comprobamos el correcto funcionamiento de Wordpress.
+
+<img src="../Practica 1º Trimestre/rsc/img/wordpress6.png" alt="index" width="570"/>
+
+<br>
+
+## Activación del módulo 'WSGI' para aplicaciones Python
+
+1. Instalamos Python:
+````
+sudo apt install python3 libexpat1 -y
+````
+
+2. Instalamos el módulo WSGI
+````
+sudo apt install libapache2-mod-wsgi-py3 -y
+````
+
+<br>
+<br>
+
+## Utilizando aplicaciones Python
+
+1. Probamos el módulo con un script de prueba:
+
+````
+sudo nano /var/www/html/wsgi_test.py
+````
+
+2. Agregamos el siguiente código al archivo wsgi_test.py:
+````Python
+def application(environ, start_response):
+    status = '200 OK'
+    output = b'Hello !\n'
+
+    response_headers = [
+        ('Content-type', 'text/plain'),
+        ('Content-Length', str(len(output)))
+    ]
+
+    start_response(status, response_headers)
+    return [output]
+````
+
+3. Cambiamos el dueño y permisos del archivo
+
+````
+sudo chown www-data:www-data /var/www/html/wsgitest.py
+sudo chmod 775 /var/www/html/wsgitest.py
+````
+
+4. En el archivo de configuración de nuestro VirtualHost añadimos:
+````
+WSGIScriptAlias / /var/www/html/wsgitest.py
+````
+
+5.  Ingresamos al dominio añadiendo al  final /wsgi
+
+<img src="../Practica 1º Trimestre/rsc/img/pyrhon.png" alt="index" width="570"/>
+
+<br>
+<br>
+
+## Medidas de seguridad al acceso de la aplicación Python
+
+1. Utilizaremos el módulo auth_basic, para empezar a utilizar este módulo debemos habilitarlo, primero para ello escribimos en una terminal lo siguiente:
+````
+sudo a2enmod auth_basic
+````
+
+2. Definimos primero un archivo donde se almacene la información relativa de los usuarios, entonces desde una terminal escribimos:
+
+````
+sudo htpasswd -c /etc/apache2/.htpasswd usuario
+````
+
+3. Ingresamos al archivo de configuración del VirtualHost:
+````
+sudo nano /etc/apache2/sites-available/nombre-dominio.conf
+````
+
+4. Agregamos la siguiente línea al archivo de configuración:
+````
+<Location /wsgi>
+  AuthType Basic
+  AuthName "Nombre_Opcional"
+  AuthUserFile /etc/apache2/.htpsswd
+  Require valid-user
+</Location>
+````
+
+5. Comprobamos que no podemos acceder al módulo WSGI
+
+<img src="../Practica 1º Trimestre/rsc/img/auth.png" alt="index" width="570"/>
+
+<br>
+<br>
+
+## Instalación y configuración de AWSTAT
+
+1. Instalamos AWSTAT mediante el siguiente comando:
+````
+sudo apt-get install awstats
+````
+
+<br>
+
+2. Habilitamos el módulo CGI:
+````
+sudo a2enmod cgi alias
+````
+
+<br>
+
+3. Reiniciamos Apache:
+````
+sudo service apache2 restart
+````
+
+<br>
+
+4. Duplicamos el archivo de configuración de AWSTAT:
+````
+sudo cp /etc/awstats/awstats.conf /etc/awstats/awstats.Nombre-Dominio.conf
+````
+
+<br>
+
+5. Editamos el archivo de configuración de AWSTAT:
+````
+sudo nano /etc/awstats/awstats.Nombre-Dominio.conf
+````
+````
+LogFile="/var/log/apache2/access.log"
+SiteDomain="Dominio.com"
+HostAliases="www.Dominio.com localhost 127.0.0.1"
+````
+
+<br>
+
+6. Generamos estadisticas de AWSTAT:
+
+````
+sudo /usr/lib/cgi-bin/awstats.pl -config=Nombre-Dominio -update
+````
+
+<br>
+
+7. Cambiamos los permisos del log generado:
+````
+sudo chmod o+r /var/log/apache2/acces.log
+````
+
+<br>
+
+8. Generamos un index para nuestra pagina de estadisticas AWSTATS:
+````
+sudo /usr/lib/cgi-bin/awstats.pl -config=Dominio.com -output > /var/www/html/index.html
+````
+
+<br>
+
+9. Visualizamos en el navegador
+
+<img src="../Practica 1º Trimestre/rsc/img/awstats.png" alt="index" width="570"/>
+
+<br>
+<br>
+
+## Instalación de un segundo servidor
+
+1. Instalamos Nginx
+````
+sudo apt-get install nginx
+````
+
+2. Ajustamos el firewall
+````
+sudo ufw allow 'Nginx HTTP'
+````
+
+3. Comprobamos que funciona
+
+<img src="../Practica 1º Trimestre/rsc/img/nginx.png" alt="index" width="570"/>
+
+4. Creamos una carpeta para el sitio web
+
+````
+sudo mkdir /var/www/server2
+````
+
+5. Creamos el archivo de configuracion del dominio
+````
+sudo nano /etc/nginx/sites-available/servidor2.centro.intranet
+````
+
+6. Agregamos lo siguiente:
+````
+server {
+    listen 8080;
+    server_name servidor2.centro.intranet;
+
+    root /var/www/servidor2.centro.intranet;
+    index index.php index.html index.htm;
+
+    location / {
+        try_files $uri $uri/ =404;
+    }
+
+    location /phpmyadmin {
+        root /var/www/html;
+        index index.php;
+        try_files $uri $uri/ =404;
+
+        location ~ \.php$ {
+            include snippets/fastcgi-php.conf;
+            fastcgi_pass unix:/var/run/php/php8.1-fpm.sock; # Ajusta según tu versión de PHP
+            fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
+            include fastcgi_params;
+        }
+    }
+
+    location ~ /\.ht {
+        deny all;
+    }
+}
+
+````
+
+7. Configuramos el archivo hosts:
+````
+111.111.111.111 servidor2.centro.intranet
+````
+
+7. Habilitamos el sitio web
+````
+sudo ln -s /etc/nginx/sites-available/servidor2.centro.intranet /etc/nginx/sites-enabled/
+````
+
+8. Reiniciamos el servicio de Nginx
+````
+sudo service nginx restart
+````
+
+9. Comprobamos que funciona
+
+<img src="../Practica 1º Trimestre/rsc/img/nginxprueba.png" alt="index" width="570"/>
+
+<br>
+
+### Instalación MySQL
+
+1.  Instalamos MySQL
+````
+sudo apt-get install mysql-server -y
+````
+
+2. Configuramos MySQLServer:
+
+````
+sudo mysql_secure_installation
+````
+
+<img src="../Practica 1º Trimestre/rsc/img/sql.png" alt="index" width="570"/>
+
+3. Creamos el usuario phpmyadmin para la posterior instalación de phpmyadmin:
+
+````
+sudo mysql -u root -p
+````
+````
+CREATE USER 'phpmyadmin'@'localhost' IDENTIFIED BY 'Contraseña';
+GRANT ALL PRIVILEGES ON *.* TO 'phpmyadmin'@'localhost' WITH GRANT OPTION;
+FLUSH PRIVILEGES;
+EXIT;
+````
+
+<br>
+<br>
+
+### Instalación PHP
+
+1. Instalamos PHP y sus dependencias:
+````
+sudo apt install php-fpm php-mysql php-mbstring php-zip php-gd php-json php-curl -y
+````
+
+2. Configurar PHP-FPM para evitar problemas con Nginx:
+````
+sudo nano /etc/php/8.1/fpm/php.ini
+````
+````
+cgi.fix_pathinfo=0
+````
+
+<img src="../Practica 1º Trimestre/rsc/img/nginx_php.png" alt="index" width="570"/>
+
+3. Reiniciamos el servicio de PHP-FPM:
+````
+sudo service php8.1-fpm restart
+````
+
+<br>
+<br>
+
+### Instalación phpMyAdmin
+
+1. Instalamos PHPmyAdmin
+````
+sudo apt-get install phpmyadmin
+````
+
+<br>
+
+2. Configuramos PHPmyAdmin, seleccionamos apache2:
+
+<img src="../Practica 1º Trimestre/rsc/img/nginx3.png" alt="index" width="570"/>
+
+<br>
+
+Posteriormente ingresamos la contraseña que habriamos establecido en el paso de instalación de MySQL
+
+<br>
+
+3. Incluimos en la carpeta de nuestro dominio los archivos de PHPmyAdmin:
+````
+sudo ln -s /usr/share/phpmyadmin /var/www/server2/
+````
+
+<br>
+
+4. Comprobamos que funciona:
+
+<img src="../Practica 1º Trimestre/rsc/img/nginx_phpmyadmin.png" alt="index" width="570"/>
+
+<img src="../Practica 1º Trimestre/rsc/img/nginx_phpmyadmin2.png" alt="index" width="570"/>
