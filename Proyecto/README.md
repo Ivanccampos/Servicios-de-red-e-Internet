@@ -214,7 +214,10 @@ define( 'DB_PASSWORD',      'Contraseña' );
 Ingresamos a nuestro dominio y comenzamos la configuración básica de Wordpress.
 Seleccionamos el idioma.
 
-![img1](Proyecto/proyecto_img/Screenshot_40.png)
+![img1](https://github.com/Ivanccampos/Servicios-de-red-e-Internet/blob/31892d2ceb2d5c4d6d567a28fd9fb2892a5c2611/Proyecto/proyecto_img/Screenshot_40.png)
+
+
+
 
 Continuamos con la configuración, añadimos nombre a nuestro sitio, correo electrónico y contraseña de administrador.
 
