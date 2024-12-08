@@ -5,7 +5,7 @@
 
 ### Instalación de Apache en Ubuntu
 
-1. Abrimos una terminal
+1. Abrimos la terminal
 
 2. Actualizamos los paquetes instalados
 `````
@@ -28,12 +28,10 @@ sudo ufw allow "Apache"
 `````
 6. Comprobar en nuestro navegador la siguiente dirección
 ````
-https://localhost
+http://localhost
 ````
-Si hemos seguido los pasos habremos instalado correctamente Apache2 para Ubuntu
+Si hemos seguido los pasos, habremos instalado correctamente Apache2 para Ubuntu
 <br>
-
-<img src="../Tema 1/rsc/img/apachecinstall1.png" alt="index" width="570"/>
 
 <br>
 
@@ -74,24 +72,18 @@ sudo apt install -y php8.1-cli php8.1-fpm php8.1-mysql
 ````
 wget https://es.wordpress.org/latest.zip
 ````
-
-2. Extraemos los archivos
-
-````
-sudo unzip latest.zip
-````
-
-Si necesitamos el comando unzip lo podemos instalar con el siguiente comando:
+ 2. Movemos los contenidos de Wordpress a la carpeta del dominio
 
 ````
-sudo apt install unzip
+sudo mv latest.tar.gz /var/www
 ````
 
-3. Movemos los contenidos de Wordpress a la carpeta del dominio
+3. Extraemos los archivos
 
 ````
-sudo mv wordpress/* /var/www/html/
+sudo tar -xzvf latest.tar.gz
 ````
+
 
 4. Cambiamos los permisos de la carpeta
 
@@ -99,6 +91,9 @@ sudo mv wordpress/* /var/www/html/
 sudo chown -R www-data:www-data /var/www/html/*
 ````
 
+````
+sudo chmod -R 755 wordpress
+````
 
 <br>
 
@@ -115,9 +110,9 @@ sudo nano /etc/apache2/sites-available/wordpress.conf
 
 ````
 <VirtualHost *:80>
-    DocumentRoot /var/www/html
-    ServerName wordpress.local
-    ServerAdmin admin@localhost
+    ServerName localhost
+    ServerAdmin webmaster@localhost
+    DocumentRoot /var/www/wordpress
 </VirtualHost>
 ````
 
@@ -133,30 +128,7 @@ sudo a2ensite wordpress
 
 <br>
 
-4. Deshabilitamos la página por defecto de Apache
-
-<br>
-
-````
-sudo a2dissite 000-default
-````
-
-<br>
-
-5. Añadimos el dominio al fichero hosts
-
-<br>
-
-````
-sudo nano /etc/hosts
-````
-
-<img src="../Practica 1º Trimestre/rsc/img/hosts.png" alt="index" width="570"/>
-
-
-<br>
-
-6. Recargamos Apache
+4. Recargamos Apache
 
 <br>
 
@@ -242,23 +214,21 @@ define( 'DB_PASSWORD',      'Contraseña' );
 Ingresamos a nuestro dominio y comenzamos la configuración básica de Wordpress.
 Seleccionamos el idioma.
 
-<img src="../Practica 1º Trimestre/rsc/img/wordpress.png" alt="index" width="570"/>
+<img src="../proyecto_img/Screenshot_40.png" alt="index" width="570"/>
 
 Continuamos con la configuración, añadimos nombre a nuestro sitio, correo electrónico y contraseña de administrador.
 
-<img src="../Practica 1º Trimestre/rsc/img/wordpress3.png" alt="index" width="570"/>
+<img src="../proyecto_img/Screenshot_41.png" alt="index" width="570"/>
 
 Habremos finalizado la configuración básica de Wordpress.
 
-<img src="../Practica 1º Trimestre/rsc/img/wordpress4.png" alt="index" width="570"/>
-
 Accedemos a la página de inicio de Wordpress e ingresamos con nuestras credenciales.
 
-<img src="../Practica 1º Trimestre/rsc/img/wordpress5.png" alt="index" width="570"/>
+<img src="../proyecto_img/Screenshot_42.png"  alt="index" width="570"/>
 
 Finalmente comprobamos el correcto funcionamiento de Wordpress.
 
-<img src="../Practica 1º Trimestre/rsc/img/wordpress6.png" alt="index" width="570"/>
+<img src="../proyecto_img/Screenshot_43.png"  alt="index" width="570"/>
 
 <br>
 
