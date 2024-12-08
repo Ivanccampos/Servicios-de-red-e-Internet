@@ -178,8 +178,6 @@ quit
 ````
 <br>
 
-<img src="../Practica 1º Trimestre/rsc/img/database.png" alt="index" width="570"/>
-
 <br>
 
 ### Configurar la conexión entre Wordpress y la base de datos
