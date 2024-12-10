@@ -26,17 +26,10 @@ Este repositorio incluye actividades llevadas a cabo en el módulo **_Servicios-
 | [Ejercicio 1](https://github.com/Ivanccampos/Servicios-de-red-e-Internet/tree/main/Actividad2#pon-en-marcha-el-servidor-apache-y-lleva-a-cabo-los-siguientes-cambios-en-el-archivo-de-configuraci%C3%B3n)  | Pon en marcha el servidor Apache y lleva a cabo los siguientes cambios. |
 | [Ejercicio 2](https://github.com/Ivanccampos/Servicios-de-red-e-Internet/tree/main/Actividad2#crea-un-script-para-cada-uno-de-los-siguientes-problemas) | Crea un script para cada uno de los siguientes problemas  |
 
-## TEMA 3
+## Proyecto
 |  Ejercicio  |  Descripción  |
 | ------------- | ------------- |
-| Ejercicio 1 | Content Cell  |
-| Ejercicio 2 | Content Cell  |
-
-## TEMA 4
-|  Ejercicio  |  Descripción  |
-| ------------- | ------------- |
-| Ejercicio 1 | Content Cell  |
-| Ejercicio 2 | Content Cell modificado desde visual studio |
+| [Proyecto 1](https://github.com/Ivanccampos/Servicios-de-red-e-Internet/tree/5b4aac5f27daa9e28fe6eb8a508947c8f741383d/Proyecto) | Presentación del proyecto 1 |
 
 
 
