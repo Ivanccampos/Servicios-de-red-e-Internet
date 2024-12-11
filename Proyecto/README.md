@@ -32,10 +32,9 @@ http://localhost
 ````
 Si hemos seguido los pasos, habremos instalado correctamente Apache2 para Ubuntu
 
-![img1](https://github.com/Ivanccampos/Servicios-de-red-e-Internet/blob/31892d2ceb2d5c4d6d567a28fd9fb2892a5c2611/Proyecto/proyecto_img/Screenshot_01.png)
+![img1](https://github.com/Ivanccampos/Servicios-de-red-e-Internet/blob/main/Proyecto/proyecto_img/Screenshot_01.png)
 
 <br>
-
 <br>
 
 
@@ -216,27 +215,26 @@ define( 'DB_PASSWORD',      'Contraseña' );
 Ingresamos a nuestro dominio y comenzamos la configuración básica de Wordpress.
 Seleccionamos el idioma.
 
-![img1](https://github.com/Ivanccampos/Servicios-de-red-e-Internet/blob/31892d2ceb2d5c4d6d567a28fd9fb2892a5c2611/Proyecto/proyecto_img/Screenshot_40.png)
+![img1](https://github.com/Ivanccampos/Servicios-de-red-e-Internet/blob/main/Proyecto/proyecto_img/Screenshot_40.png)
 
 
 
 
 Continuamos con la configuración, añadimos nombre a nuestro sitio, correo electrónico y contraseña de administrador.
 
-![img1](https://github.com/Ivanccampos/Servicios-de-red-e-Internet/blob/31892d2ceb2d5c4d6d567a28fd9fb2892a5c2611/Proyecto/proyecto_img/Screenshot_41.png)
+![img1](https://github.com/Ivanccampos/Servicios-de-red-e-Internet/blob/main/Proyecto/proyecto_img/Screenshot_41.png)
 
 
 Habremos finalizado la configuración básica de Wordpress.
 
 Accedemos a la página de inicio de Wordpress e ingresamos con nuestras credenciales.
 
-![img1](https://github.com/Ivanccampos/Servicios-de-red-e-Internet/blob/31892d2ceb2d5c4d6d567a28fd9fb2892a5c2611/Proyecto/proyecto_img/Screenshot_42.png)
+![img1](https://github.com/Ivanccampos/Servicios-de-red-e-Internet/blob/main/Proyecto/proyecto_img/Screenshot_42.png)
 
 
 Finalmente comprobamos el correcto funcionamiento de Wordpress.
 
-![img1](https://github.com/Ivanccampos/Servicios-de-red-e-Internet/blob/31892d2ceb2d5c4d6d567a28fd9fb2892a5c2611/Proyecto/proyecto_img/Screenshot_43.png)
-
+![img1](https://github.com/Ivanccampos/Servicios-de-red-e-Internet/blob/main/Proyecto/proyecto_img/Screenshot_43.png)
 
 
 <br>
@@ -295,7 +293,7 @@ WSGIScriptAlias / /var/www/html/wsgi_prueba.py
 
 5.  Ingresamos al dominio añadiendo al  final /wsgi
 
-![img1](https://github.com/Ivanccampos/Servicios-de-red-e-Internet/blob/31892d2ceb2d5c4d6d567a28fd9fb2892a5c2611/Proyecto/proyecto_img/Screenshot_61.png)
+![img1](https://github.com/Ivanccampos/Servicios-de-red-e-Internet/blob/main/Proyecto/proyecto_img/Screenshot_61.png)
 
 <br>
 <br>
@@ -330,7 +328,7 @@ sudo nano /etc/apache2/sites-available/nombre-dominio.conf
 
 5. Comprobamos que no podemos acceder al módulo WSGI
 
-![img1](https://github.com/Ivanccampos/Servicios-de-red-e-Internet/blob/31892d2ceb2d5c4d6d567a28fd9fb2892a5c2611/Proyecto/proyecto_img/Screenshot_65.png)
+![img1](https://github.com/Ivanccampos/Servicios-de-red-e-Internet/blob/main/Proyecto/proyecto_img/Screenshot_65.png)
 
 <br>
 <br>
