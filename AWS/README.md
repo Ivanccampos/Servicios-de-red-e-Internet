@@ -1,5 +1,3 @@
- Práctica Servidores Web - 1º Trimestre
-
 
 ## Cómo crear un certificado SSL autofirmado para Apache
 
