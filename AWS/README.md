@@ -167,3 +167,57 @@ sudo systemctl restart apache2
 <br>
 
 <br>
+
+## Ajustar la autenticación MySQL
+
+
+En los sistemas Ubuntu con MySQL 5.7 (y versiones posteriores), el usuario root de MySQL se configura para la autenticación usando el complemento auth_socket de manera predeterminada en lugar de una contraseña. Esto en muchos casos proporciona mayor seguridad y utilidad, pero también puede generar complicaciones cuando deba permitir que un programa externo (como phpMyAdmin) acceda al usuario.
+
+Para usar una contraseña para conectar con MySQL como root, deberá cambiar su método de autenticación de auth_socket a otro complemento, como caching_sha2_password o mysql_native_password. Para hacer esto, abra la consola de MySQL desde su terminal:
+
+`````
+sudo mysql
+
+`````
+
+A continuación, compruebe con el siguiente comando el método de autenticación utilizado por una de sus cuentas de usuario de MySQL:
+
+`````
+SELECT user,authentication_string,plugin,host FROM mysql.user;
+
+`````
+
+![img1](https://github.com/Ivanccampos/Servicios-de-red-e-Internet/blob/86b11fc8c59f5162ed1d8f147f54630acf1e5243/AWS/autenticacion/Screenshot_1.png)
+
+En este ejemplo, puede ver que, en efecto, el usuario root se autentica utilizando el complemento de auth_socket. Para configurar la cuenta root para autenticar con una contraseña, ejecute una instrucción ALTER USER para cambiar qué complemento de autenticación utiliza y establecer una nueva contraseña.
+
+`````
+ALTER USER 'root'@'localhost' IDENTIFIED WITH caching_sha2_password BY 'password';
+
+`````
+![img1](https://github.com/Ivanccampos/Servicios-de-red-e-Internet/blob/86b11fc8c59f5162ed1d8f147f54630acf1e5243/AWS/autenticacion/Screenshot_2.png)
+
+A continuación, ejecute FLUSH PRIVILEGES para indicar al servidor que vuelva a cargar la tabla de permisos y aplique sus nuevos cambios:
+
+`````
+FLUSH PRIVILEGES;
+`````
+![img1](https://github.com/Ivanccampos/Servicios-de-red-e-Internet/blob/86b11fc8c59f5162ed1d8f147f54630acf1e5243/AWS/autenticacion/Screenshot_3.png)
+Compruebe de nuevo los métodos de autenticación empleados por cada uno de sus usuarios para confirmar que root deje de realizarla usando el complemento de auth_socket:
+`````
+SELECT user,authentication_string,plugin,host FROM mysql.user;
+`````
+![img1](https://github.com/Ivanccampos/Servicios-de-red-e-Internet/blob/86b11fc8c59f5162ed1d8f147f54630acf1e5243/AWS/autenticacion/Screenshot_4.png)
+Puede ver en este resultado de ejemplo que el root user de MySQL ahora autentica usando caching_sha2_password. Una vez que confirme esto en su propio servidor, podrá cerrar el shell de MySQL:
+
+`````
+mysql> exit
+
+`````
+ Si tiene la autenticación por contraseña habilitada para root deberá usar un comando diferente para acceder al shell de MySQL. A través de lo siguiente, se ejecutará su cliente de MySQL con privilegios de usuario regulares y solo obtendrá privilegios de administrador dentro de la base de datos mediante la autenticación:
+
+`````
+mysql -u root -p
+`````
+
+![img1](https://github.com/Ivanccampos/Servicios-de-red-e-Internet/blob/86b11fc8c59f5162ed1d8f147f54630acf1e5243/AWS/autenticacion/Screenshot_5.png)
