@@ -187,7 +187,7 @@ SELECT user,authentication_string,plugin,host FROM mysql.user;
 
 `````
 
-![img1](https://github.com/Ivanccampos/Servicios-de-red-e-Internet/blob/86b11fc8c59f5162ed1d8f147f54630acf1e5243/AWS/autenticacion/Screenshot_1.png)
+![img1](https://github.com/Ivanccampos/Servicios-de-red-e-Internet/blob/18a20990fc63259b630e947ce88cbec0402b6c07/AWS/autenticacion/Screenshot_1.png)
 
 En este ejemplo, puede ver que, en efecto, el usuario root se autentica utilizando el complemento de auth_socket. Para configurar la cuenta root para autenticar con una contraseña, ejecute una instrucción ALTER USER para cambiar qué complemento de autenticación utiliza y establecer una nueva contraseña.
 
@@ -195,19 +195,19 @@ En este ejemplo, puede ver que, en efecto, el usuario root se autentica utilizan
 ALTER USER 'root'@'localhost' IDENTIFIED WITH caching_sha2_password BY 'password';
 
 `````
-![img1](https://github.com/Ivanccampos/Servicios-de-red-e-Internet/blob/86b11fc8c59f5162ed1d8f147f54630acf1e5243/AWS/autenticacion/Screenshot_2.png)
+![img1](https://github.com/Ivanccampos/Servicios-de-red-e-Internet/blob/18a20990fc63259b630e947ce88cbec0402b6c07/AWS/autenticacion/Screenshot_2.png)
 
 A continuación, ejecute FLUSH PRIVILEGES para indicar al servidor que vuelva a cargar la tabla de permisos y aplique sus nuevos cambios:
 
 `````
 FLUSH PRIVILEGES;
 `````
-![img1](https://github.com/Ivanccampos/Servicios-de-red-e-Internet/blob/86b11fc8c59f5162ed1d8f147f54630acf1e5243/AWS/autenticacion/Screenshot_3.png)
+![img1](https://github.com/Ivanccampos/Servicios-de-red-e-Internet/blob/18a20990fc63259b630e947ce88cbec0402b6c07/AWS/autenticacion/Screenshot_3.png)
 Compruebe de nuevo los métodos de autenticación empleados por cada uno de sus usuarios para confirmar que root deje de realizarla usando el complemento de auth_socket:
 `````
 SELECT user,authentication_string,plugin,host FROM mysql.user;
 `````
-![img1](https://github.com/Ivanccampos/Servicios-de-red-e-Internet/blob/86b11fc8c59f5162ed1d8f147f54630acf1e5243/AWS/autenticacion/Screenshot_4.png)
+![img1](https://github.com/Ivanccampos/Servicios-de-red-e-Internet/blob/18a20990fc63259b630e947ce88cbec0402b6c07/AWS/autenticacion/Screenshot_4.png)
 Puede ver en este resultado de ejemplo que el root user de MySQL ahora autentica usando caching_sha2_password. Una vez que confirme esto en su propio servidor, podrá cerrar el shell de MySQL:
 
 `````
@@ -220,4 +220,4 @@ mysql> exit
 mysql -u root -p
 `````
 
-![img1](https://github.com/Ivanccampos/Servicios-de-red-e-Internet/blob/86b11fc8c59f5162ed1d8f147f54630acf1e5243/AWS/autenticacion/Screenshot_5.png)
+![img1](https://github.com/Ivanccampos/Servicios-de-red-e-Internet/blob/18a20990fc63259b630e947ce88cbec0402b6c07/AWS/autenticacion/Screenshot_5.png)
