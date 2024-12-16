@@ -397,3 +397,172 @@ http://ip-servidor/cgi-bin/awstats.pl?config="dominio"
 `````
 
 ![img1](https://github.com/Ivanccampos/Servicios-de-red-e-Internet/blob/main/Proyecto/proyecto_img/awstats/Screenshot_12.png)
+
+
+## Instalación de nginx y phpmyadmin
+
+### Instalación nginx
+
+
+![img1](https://github.com/Ivanccampos/Servicios-de-red-e-Internet/blob/main/Proyecto/proyecto_img/Screenshot_66.png)
+![img1](https://github.com/Ivanccampos/Servicios-de-red-e-Internet/blob/main/Proyecto/proyecto_img/Screenshot_67.png)
+![img1](https://github.com/Ivanccampos/Servicios-de-red-e-Internet/blob/main/Proyecto/proyecto_img/Screenshot_68.png)
+![img1](https://github.com/Ivanccampos/Servicios-de-red-e-Internet/blob/main/Proyecto/proyecto_img/Screenshot_69.png)
+
+
+### Configuracion nginx
+
+1. Cambiar la configuración del dominio en Nginx
+Editar el archivo de configuración del servidor virtual:
+
+`````
+sudo nano /etc/nginx/sites-available/servidor2.centro.intranet
+`````
+![img1](https://github.com/Ivanccampos/Servicios-de-red-e-Internet/blob/main/Proyecto/proyecto_img/Screenshot_70.png)
+
+2. Configura el archivo para el puerto 8080 y PHP:
+
+Copia y pega la siguiente configuración en el archivo:
+`````
+server {
+    listen 8080;
+    server_name servidor2.centro.intranet;
+
+    root /var/www/servidor2; # Ruta al directorio raíz del sitio
+    index index.php index.html index.htm;
+
+    # Configuración para manejar PHP
+    location / {
+        try_files $uri $uri/ =404;
+    }
+
+    location ~ \.php$ {
+        include snippets/fastcgi-php.conf;
+        fastcgi_pass unix:/var/run/php/php8.1-fpm.sock; # Cambiar a la versión de PHP instalada
+        fastcgi_param SCRIPT_FILENAME $document_root$fastcgi_script_name;
+        include fastcgi_params;
+    }
+
+    location ~ /\.ht {
+        deny all;
+    }
+}
+`````
+![img1](https://github.com/Ivanccampos/Servicios-de-red-e-Internet/blob/main/Proyecto/proyecto_img/Screenshot_71.png)
+![img1](https://github.com/Ivanccampos/Servicios-de-red-e-Internet/blob/main/Proyecto/proyecto_img/Screenshot_72.png)
+
+3. Crear el directorio raíz del sitio:
+
+`````
+sudo mkdir -p /var/www/servidor2
+sudo chown -R www-data:www-data /var/www/servidor2
+sudo chmod -R 755 /var/www/servidor2
+`````
+![img1](https://github.com/Ivanccampos/Servicios-de-red-e-Internet/blob/main/Proyecto/proyecto_img/Screenshot_73.png)
+4. Habilitar la configuración del sitio:
+
+Si el archivo está en sites-available, habilítalo con un enlace simbólico:
+
+`````
+sudo ln -s /etc/nginx/sites-available/servidor2.centro.intranet /etc/nginx/sites-enabled/
+`````
+![img1](https://github.com/Ivanccampos/Servicios-de-red-e-Internet/blob/main/Proyecto/proyecto_img/Screenshot_74.png) 
+
+5. Probar la configuración de Nginx:
+
+`````
+sudo nginx -t
+`````
+![img1](https://github.com/Ivanccampos/Servicios-de-red-e-Internet/blob/main/Proyecto/proyecto_img/Screenshot_75.png)
+
+Si no hay errores, recarga Nginx:
+
+`````
+sudo systemctl reload nginx
+`````
+
+![img1](https://github.com/Ivanccampos/Servicios-de-red-e-Internet/blob/main/Proyecto/proyecto_img/Screenshot_76.png)
+
+### Configurar PHP-FPM
+
+1. Asegúrate de tener instalado PHP-FPM:
+
+
+`````
+sudo apt install php-fpm
+`````
+
+![img1](https://github.com/Ivanccampos/Servicios-de-red-e-Internet/blob/main/Proyecto/proyecto_img/Screenshot_77.png) 
+
+2. Verifica la versión instalada de PHP y el socket correspondiente:
+
+
+`````
+ls /var/run/php/
+`````
+![img1](https://github.com/Ivanccampos/Servicios-de-red-e-Internet/blob/main/Proyecto/proyecto_img/Screenshot_78.png)
+
+3. Ajusta el archivo de configuración de PHP-FPM para que trabaje con Nginx:
+
+`````
+sudo nano /etc/php/8.1/fpm/php.ini
+`````
+
+Busca y asegúrate de que las siguientes opciones estén activas:
+
+`````
+cgi.fix_pathinfo=0
+`````
+![img1](https://github.com/Ivanccampos/Servicios-de-red-e-Internet/blob/main/Proyecto/proyecto_img/Screenshot_79.png)
+
+Reinicia PHP-FPM para aplicar los cambios:
+
+
+`````
+sudo systemctl restart php8.1-fpm
+`````
+![img1](https://github.com/Ivanccampos/Servicios-de-red-e-Internet/blob/main/Proyecto/proyecto_img/Screenshot_80.png) 
+
+### Configurar el dominio en el sistema
+
+Para acceder al dominio servidor2.centro.intranet, agrega una entrada al archivo /etc/hosts en el cliente o servidor de pruebas (si es local):
+
+1. Edita el archivo /etc/hosts:
+`````
+sudo nano /etc/hosts
+`````
+2. Agrega la siguiente línea:
+`````
+127.0.0.1 servidor2.centro.intranet
+`````
+![img1](https://github.com/Ivanccampos/Servicios-de-red-e-Internet/blob/main/Proyecto/proyecto_img/Screenshot_81.png)
+
+### Probar la configuración
+Coloca un archivo PHP de prueba en el directorio del sitio:
+
+`````
+echo "<?php phpinfo(); ?>" | sudo tee /var/www/servidor2/index.php
+`````
+
+![img1](https://github.com/Ivanccampos/Servicios-de-red-e-Internet/blob/main/Proyecto/proyecto_img/Screenshot_82.png)
+
+Accede al sitio en el navegador:
+
+Visita http://servidor2.centro.intranet:8080 y deberías ver la página de información de PHP.
+
+
+![img1](https://github.com/Ivanccampos/Servicios-de-red-e-Internet/blob/main/Proyecto/proyecto_img/Screenshot_83.png)
+
+### Instalar phpmyadmin
+1. Teclea el siguiente comando:
+`````
+sudo apt-get install phpmyadmin
+`````
+
+![img1](https://github.com/Ivanccampos/Servicios-de-red-e-Internet/blob/main/Proyecto/proyecto_img/Screenshot_85.png)
+
+![img1](https://github.com/Ivanccampos/Servicios-de-red-e-Internet/blob/main/Proyecto/proyecto_img/Screenshot_86.png)
+
+2. Reinicia los servicios de apache
+
+![img1](https://github.com/Ivanccampos/Servicios-de-red-e-Internet/blob/main/Proyecto/proyecto_img/Screenshot_87.png)
