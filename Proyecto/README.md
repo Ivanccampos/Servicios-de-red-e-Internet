@@ -379,6 +379,7 @@ sudo /usr/lib/cgi-bin/awstats.pl -config="dominio" -update
 ![img1](https://github.com/Ivanccampos/Servicios-de-red-e-Internet/blob/main/Proyecto/proyecto_img/awstats/Screenshot_10.png)
 
 ![img1](https://github.com/Ivanccampos/Servicios-de-red-e-Internet/blob/main/Proyecto/proyecto_img/awstats/Screenshot_9.png)
+
 6. Configurar Apache para awstats
 
 `````
