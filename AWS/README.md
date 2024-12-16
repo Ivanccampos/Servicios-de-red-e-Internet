@@ -12,6 +12,7 @@
 sudo apt update
 
 `````
+
 3. Instalamos las nuevas versiones
 ````
 sudo apt upgrade
@@ -20,17 +21,29 @@ sudo apt upgrade
 `````
 sudo apt install apache2
 `````
+
+![img1](https://github.com/Ivanccampos/Servicios-de-red-e-Internet/blob/86b11fc8c59f5162ed1d8f147f54630acf1e5243/AWS/aws_img/Screenshot_4.png)
+<br>
+
 5. Instalamos mysql
 `````
 sudo apt install mysql-server
 `````
+
+![img1](https://github.com/Ivanccampos/Servicios-de-red-e-Internet/blob/86b11fc8c59f5162ed1d8f147f54630acf1e5243/AWS/aws_img/Screenshot_5.png)
+
 `````
 sudo mysql_secure_installation
 `````
+
+![img1](https://github.com/Ivanccampos/Servicios-de-red-e-Internet/blob/86b11fc8c59f5162ed1d8f147f54630acf1e5243/AWS/aws_img/Screenshot_6.png)
+
+
 6. Crear un par de clave y certificado autofirmados con OpenSSL:
 ````
 sudo openssl req -x509 -nodes -days 365 -newkey rsa:2048 -keyout /etc/ssl/private/apache-selfsigned.key -out /etc/ssl/certs/apache-selfsigned.crt
 ````
+![img1](https://github.com/Ivanccampos/Servicios-de-red-e-Internet/blob/86b11fc8c59f5162ed1d8f147f54630acf1e5243/AWS/aws_img/Screenshot_8.png)
 
 Los dos archivos que creó se ubicarán en los subdirectorios correspondientes en /etc/ssl.
 
@@ -46,6 +59,10 @@ Modificaremos el archivo de host virtual no cifrado para redireccionar las solic
 `````
 sudo nano /etc/apache2/conf-available/ssl-params.conf
 `````
+
+![img1](https://github.com/Ivanccampos/Servicios-de-red-e-Internet/blob/86b11fc8c59f5162ed1d8f147f54630acf1e5243/AWS/aws_img/Screenshot_9.png)
+
+
 2. Modificar el archivo de host virtual de Apache SSL predeterminado
 `````
 sudo cp /etc/apache2/sites-available/default-ssl.conf /etc/apache2/sites-available/default-ssl.conf.bak
@@ -55,15 +72,24 @@ Haremos algunos ajustes menores en el archivo. Configuraremos las cosas normales
 `````
 sudo nano /etc/apache2/sites-available/default-ssl.conf
 `````
+
+![img1](https://github.com/Ivanccampos/Servicios-de-red-e-Internet/blob/86b11fc8c59f5162ed1d8f147f54630acf1e5243/AWS/aws_img/Screenshot_11.png)
+
+
 3. Modificar el archivo de host HTTP para el redireccionamiento a HTTPS
 `````
 sudo nano /etc/apache2/sites-available/000-default.conf
 `````
+![img1](https://github.com/Ivanccampos/Servicios-de-red-e-Internet/blob/86b11fc8c59f5162ed1d8f147f54630acf1e5243/AWS/aws_img/Screenshot_12.png)
+
 
 ### Ajustar el firewall
 `````
 sudo ufw app list
 `````
+
+![img1](https://github.com/Ivanccampos/Servicios-de-red-e-Internet/blob/86b11fc8c59f5162ed1d8f147f54630acf1e5243/AWS/aws_img/Screenshot_13.png)
+
 `````
 sudo ufw status
 `````
@@ -74,6 +100,8 @@ sudo ufw allow 'Apache Full'
 sudo ufw delete allow 'Apache'
 `````
 
+![img1](https://github.com/Ivanccampos/Servicios-de-red-e-Internet/blob/86b11fc8c59f5162ed1d8f147f54630acf1e5243/AWS/aws_img/Screenshot_14.png)
+
 ### Habilitar los cambios en Apache
 
 Ahora que realizamos los cambios y ajustamos el firewall, podemos habilitar los módulos y encabezados SSL de Apache, y también nuestro host virtual listo para SSL, y reiniciar Apache.
@@ -82,17 +110,24 @@ Ahora que realizamos los cambios y ajustamos el firewall, podemos habilitar los 
 sudo a2enmod ssl
 sudo a2enmod headers
 `````
+![img1](https://github.com/Ivanccampos/Servicios-de-red-e-Internet/blob/86b11fc8c59f5162ed1d8f147f54630acf1e5243/AWS/aws_img/Screenshot_15.png)
+
 `````
 sudo a2ensite default-ssl
 `````
+![img1](https://github.com/Ivanccampos/Servicios-de-red-e-Internet/blob/86b11fc8c59f5162ed1d8f147f54630acf1e5243/AWS/aws_img/Screenshot_17.png)
+
 `````
 sudo a2enconf ssl-params
 `````
+![img1](https://github.com/Ivanccampos/Servicios-de-red-e-Internet/blob/86b11fc8c59f5162ed1d8f147f54630acf1e5243/AWS/aws_img/Screenshot_16.png)
+
 
 En este punto, nuestro sitio y los módulos necesarios quedarán habilitados. Deberíamos comprobar que no haya errores de sintaxis en nuestros archivos. Podemos hacerlo escribiendo lo siguiente:
 `````
 sudo apache2ctl configtest
 `````
+![img1](https://github.com/Ivanccampos/Servicios-de-red-e-Internet/blob/86b11fc8c59f5162ed1d8f147f54630acf1e5243/AWS/aws_img/Screenshot_18.png)
 
 `````
 sudo systemctl restart apache2
@@ -109,6 +144,7 @@ https://server_domain_or_IP
 `````
 Debido a que el certificado que creamos no está firmado por una de las autoridades de certificados de confianza de su navegador, es probable que se vea una advertencia
 
+![img1](https://github.com/Ivanccampos/Servicios-de-red-e-Internet/blob/86b11fc8c59f5162ed1d8f147f54630acf1e5243/AWS/aws_img/Screenshot_19.png)
 
 ### Cambiar a una redireccionamiento permanente
 
@@ -118,6 +154,8 @@ Si su redireccionamiento funcionó de forma correcta y está seguro que quiere p
 `````
 sudo nano /etc/apache2/sites-available/000-default.conf
 `````
+![img1](https://github.com/Ivanccampos/Servicios-de-red-e-Internet/blob/86b11fc8c59f5162ed1d8f147f54630acf1e5243/AWS/aws_img/Screenshot_20.png)
+
 `````
 sudo apache2ctl configtest
 `````
