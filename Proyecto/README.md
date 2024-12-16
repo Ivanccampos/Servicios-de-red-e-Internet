@@ -332,3 +332,67 @@ sudo nano /etc/apache2/sites-available/nombre-dominio.conf
 
 <br>
 <br>
+
+## Instalación de awstats
+
+1. Abrimos la terminal
+
+2. Instalamos el paquete awstats
+`````
+sudo apt install awstats
+`````
+![img1](https://github.com/Ivanccampos/Servicios-de-red-e-Internet/blob/main/Proyecto/proyecto_img/awstats/Screenshot_2.png)
+
+
+3. Habilitar el módulo CGI en Apache
+
+`````
+sudo a2enmod cgi
+sudo a2enconf awstats
+`````
+
+Y reiniciamos apache2
+
+`````
+sudo systemctl restart apache2
+`````
+
+![img1](https://github.com/Ivanccampos/Servicios-de-red-e-Internet/blob/main/Proyecto/proyecto_img/awstats/Screenshot_4.png)
+
+4. Crear el archivo de configuración awstats
+
+`````
+cp /etc/awstats/awstats.conf /etc/awstats/awstats"dominio".conf
+sudo nano /etc/awstats/awstats"dominio".conf
+`````
+![img1](https://github.com/Ivanccampos/Servicios-de-red-e-Internet/blob/main/Proyecto/proyecto_img/awstats/Screenshot_8.png) 
+
+Y modificamos LogFile y HostAliases
+
+![img1](https://github.com/Ivanccampos/Servicios-de-red-e-Internet/blob/main/Proyecto/proyecto_img/awstats/Screenshot_6.png)
+![img1](https://github.com/Ivanccampos/Servicios-de-red-e-Internet/blob/main/Proyecto/proyecto_img/awstats/Screenshot_7.png)
+
+5. Crear el archivo con las estadísiticas iniciales.
+`````
+sudo /usr/lib/cgi-bin/awstats.pl -config="dominio" -update
+````` 
+![img1](https://github.com/Ivanccampos/Servicios-de-red-e-Internet/blob/main/Proyecto/proyecto_img/awstats/Screenshot_10.png)
+
+![img1](https://github.com/Ivanccampos/Servicios-de-red-e-Internet/blob/main/Proyecto/proyecto_img/awstats/Screenshot_9.png)
+6. Configurar Apache para awstats
+
+`````
+sudo cp -r /usr/lib/cgi-bin /var/www/html/
+sudo chown -R www-data:www-data /var/html/cgi-bin/
+sudo chmod 755 /var/www/html/cgi-bin/
+
+`````
+![img1](https://github.com/Ivanccampos/Servicios-de-red-e-Internet/blob/main/Proyecto/proyecto_img/awstats/Screenshot_11.png)
+
+7. Acceder a la página
+
+`````
+http://ip-servidor/cgi-bin/awstats.pl?config="dominio"
+`````
+
+![img1](https://github.com/Ivanccampos/Servicios-de-red-e-Internet/blob/main/Proyecto/proyecto_img/awstats/Screenshot_12.png)
