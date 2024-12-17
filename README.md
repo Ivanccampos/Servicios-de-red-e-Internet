@@ -30,6 +30,6 @@ Este repositorio incluye actividades llevadas a cabo en el módulo **_Servicios-
 |  Ejercicio  |  Descripción  |
 | ------------- | ------------- |
 | [Proyecto 1](https://github.com/Ivanccampos/Servicios-de-red-e-Internet/tree/main/Proyecto) | Presentación del proyecto 1 |
-| [AWS](https://github.com/Ivanccampos/Servicios-de-red-e-Internet/tree/main/AWS) | AWS |
+| [AWS](https://github.com/Ivanccampos/Servicios-de-red-e-Internet/tree/main/AWS) | Ejercicios realizados en AWS |
 
 
