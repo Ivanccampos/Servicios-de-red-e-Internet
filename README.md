@@ -29,7 +29,7 @@ Este repositorio incluye actividades llevadas a cabo en el módulo **_Servicios-
 ## Proyecto
 |  Ejercicio  |  Descripción  |
 | ------------- | ------------- |
-| [Proyecto 1](https://github.com/Ivanccampos/Servicios-de-red-e-Internet/tree/5b4aac5f27daa9e28fe6eb8a508947c8f741383d/Proyecto) | Presentación del proyecto 1 |
+| [Proyecto 1](https://github.com/Ivanccampos/Servicios-de-red-e-Internet/tree/main/Proyecto) | Presentación del proyecto 1 |
 | [AWS](https://github.com/Ivanccampos/Servicios-de-red-e-Internet/tree/main/AWS) | AWS |
 
 
