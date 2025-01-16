@@ -36,5 +36,5 @@ Este repositorio incluye actividades llevadas a cabo en el módulo **_Servicios-
 ## [TEMA 3](Tema_2_Actividad_5/README.md) 
 |  Ejercicio  |  Descripción  |
 | ------------- | ------------- |
-| [Actividad 5]([/Actividad0/README.md#actividad-01](https://github.com/Ivanccampos/Servicios-de-red-e-Internet/tree/49d189a5137c8bcc157d32cae5ea1edd942a6933/Tema_2_Actividad_5)) |  Instalar y configura bin9 |
+| [Actividad 5](https://github.com/Ivanccampos/Servicios-de-red-e-Internet/tree/main/Tema_2_Actividad_5#actividad-5) |  Instalar y configura bin9 |
 
