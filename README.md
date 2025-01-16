@@ -33,3 +33,8 @@ Este repositorio incluye actividades llevadas a cabo en el módulo **_Servicios-
 | [AWS](https://github.com/Ivanccampos/Servicios-de-red-e-Internet/tree/main/AWS) | Ejercicios realizados en AWS |
 
 
+## [TEMA 3](Tema_2_Actividad_5/README.md) 
+|  Ejercicio  |  Descripción  |
+| ------------- | ------------- |
+| [Actividad 5](/Actividad0/README.md#actividad-01) |  Instalar y configura bin9 |
+
