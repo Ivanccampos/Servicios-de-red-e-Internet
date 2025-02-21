@@ -19,21 +19,21 @@ Entramos al laboratorio:
 
 Vamos al apartado de VPC y la creamos:
 
-![img1](/TEMA_3_S5/AWSScreenshot_2.png)
+![img1](/TEMA_3_S5/AWS/Screenshot_2.png)
 
-![img1](/TEMA_3_S5/AWSScreenshot_3.png)
+![img1](/TEMA_3_S5/AWS/Screenshot_3.png)
 
 Configuramos la VPC:
 
-![img1](/TEMA_3_S5/AWSScreenshot_4.png)
+![img1](/TEMA_3_S5/AWS/Screenshot_4.png)
 
-![img1](/TEMA_3_S5/AWSScreenshot_5.png)
+![img1](/TEMA_3_S5/AWS/Screenshot_5.png)
 
-![img1](/TEMA_3_S5/AWSScreenshot_6.png)
+![img1](/TEMA_3_S5/AWS/Screenshot_6.png)
 
 Ahora la VPC se empieza a crear:
 
-![img1](/TEMA_3_S5/AWSScreenshot_7.png)
+![img1](/TEMA_3_S5/AWS/Screenshot_7.png)
 
 ---
 
@@ -41,31 +41,31 @@ Ahora la VPC se empieza a crear:
 
 Vamos a la zona de creación de máquinas EC2:
 
-![img1](/TEMA_3_S5/AWSScreenshot_8.png)
+![img1](/TEMA_3_S5/AWS/Screenshot_8.png)
 
 Creamos la máquina para la red pública:
 
-![img1](/TEMA_3_S5/AWSScreenshot_9.png)
+![img1](/TEMA_3_S5/AWS/Screenshot_9.png)
 
 Elegimos el sistema operativo:
 
-![img1](/TEMA_3_S5/AWSScreenshot_10.png)
+![img1](/TEMA_3_S5/AWS/Screenshot_10.png)
 
 Asignamos el par de claves para conexión con ssh
 
-![img1](/TEMA_3_S5/AWSScreenshot_11.png)
+![img1](/TEMA_3_S5/AWS/Screenshot_11.png)
 
 La asignamos a la VPC y subred publica 1:
 
-![img1](/TEMA_3_S5/AWSScreenshot_12.png)
+![img1](/TEMA_3_S5/AWS/Screenshot_12.png)
 
 Creamos las reglas de firewall:
 
-![img1](/TEMA_3_S5/AWSScreenshot_13.png)
+![img1](/TEMA_3_S5/AWS/Screenshot_13.png)
 
 Creamos la máquina:
 
-![img1](/TEMA_3_S5/AWSScreenshot_14.png)
+![img1](/TEMA_3_S5/AWS/Screenshot_14.png)
 
 ---
 
@@ -73,40 +73,40 @@ Creamos la máquina:
 
 Instalamos la clave ppk para conexión con la máquina EC2:
 
-![img1](/TEMA_3_S5/AWSScreenshot_14.png)
+![img1](/TEMA_3_S5/AWS/Screenshot_14.png)
 
 Copiamos el nombre DNS de la máquina:
 
-![img1](/TEMA_3_S5/AWSScreenshot_15.png)
+![img1](/TEMA_3_S5/AWS/Screenshot_15.png)
 
 Conectamos con ssh por Putty:
 
-![img1](/TEMA_3_S5/AWSScreenshot_16.png)
+![img1](/TEMA_3_S5/AWS/Screenshot_16.png)
 
-![img1](/TEMA_3_S5/AWSScreenshot_17.png)
+![img1](/TEMA_3_S5/AWS/Screenshot_17.png)
 
-![img1](/TEMA_3_S5/AWSScreenshot_18.png)
+![img1](/TEMA_3_S5/AWS/Screenshot_18.png)
 
-![img1](/TEMA_3_S5/AWSScreenshot_19.png)
+![img1](/TEMA_3_S5/AWS/Screenshot_19.png)
 
 Nos conectamos con el usuario Ubuntu:
 
-![img1](/TEMA_3_S5/AWSScreenshot_20.png)
+![img1](/TEMA_3_S5/AWS/Screenshot_20.png)
 
 Realizamos un update y upgrade:
 
-![img1](/TEMA_3_S5/AWSScreenshot_21.png)
+![img1](/TEMA_3_S5/AWS/Screenshot_21.png)
 
 
 Instalamos las apache y php:
 
-![img1](/TEMA_3_S5/AWSScreenshot_22.png)
+![img1](/TEMA_3_S5/AWS/Screenshot_22.png)
 
-![img1](/TEMA_3_S5/AWSScreenshot_23.png)
+![img1](/TEMA_3_S5/AWS/Screenshot_23.png)
 
 Reiniciamos apache2:
 
-![img1](/TEMA_3_S5/AWSScreenshot_24.png)
+![img1](/TEMA_3_S5/AWS/Screenshot_24.png)
 
 ---
 
@@ -114,60 +114,60 @@ Reiniciamos apache2:
 
 Vamos al apartado de RDS:
 
-![img1](/TEMA_3_S5/AWSScreenshot_25.png)
+![img1](/TEMA_3_S5/AWS/Screenshot_25.png)
 
 Creamos la base de datos:
 
-![img1](/TEMA_3_S5/AWSScreenshot_26.png)
+![img1](/TEMA_3_S5/AWS/Screenshot_26.png)
 
 Asignamos el tipo de base de datos MYSQL:
 
-![img1](/TEMA_3_S5/AWSScreenshot_27.png)
+![img1](/TEMA_3_S5/AWS/Screenshot_27.png)
 
 Elegimos la capa gratuita:
 
-![img1](/TEMA_3_S5/AWSScreenshot_28.png)
+![img1](/TEMA_3_S5/AWS/Screenshot_28.png)
 
 Elegimos las credenciales del administrador y que sea autoadministrado:
 
-![img1](/TEMA_3_S5/AWSScreenshot_29.png)
+![img1](/TEMA_3_S5/AWS/Screenshot_29.png)
 
 Asignamos la configuracion de la instancia y almacenamiento:
 
-![img1](/TEMA_3_S5/AWSScreenshot_30.png)
+![img1](/TEMA_3_S5/AWS/Screenshot_30.png)
 
 Configuramos la conectividad de la base de datos:
 
-![img1](/TEMA_3_S5/AWSScreenshot_31.png)
+![img1](/TEMA_3_S5/AWS/Screenshot_31.png)
 
-![img1](/TEMA_3_S5/AWSScreenshot_32.png)
+![img1](/TEMA_3_S5/AWS/Screenshot_32.png)
 
 Creamos la base de datos:
 
-![img1](/TEMA_3_S5/AWSScreenshot_33.png)
+![img1](/TEMA_3_S5/AWS/Screenshot_33.png)
 
 
 Configuramos la conexión con la instancia EC2:
 
-![img1](/TEMA_3_S5/AWSScreenshot_34.png)
+![img1](/TEMA_3_S5/AWS/Screenshot_34.png)
 
-![img1](/TEMA_3_S5/AWSScreenshot_35.png)
+![img1](/TEMA_3_S5/AWS/Screenshot_35.png)
 
-![img1](/TEMA_3_S5/AWSScreenshot_36.png)
+![img1](/TEMA_3_S5/AWS/Screenshot_36.png)
 
-![img1](/TEMA_3_S5/AWSScreenshot_37.png)
+![img1](/TEMA_3_S5/AWS/Screenshot_37.png)
 
 ### 5. Creación de sistema de archivos EFS
 
 Vamos al apartado de EFS:
 
-![img1](/TEMA_3_S5/AWSScreenshot_38.png)
+![img1](/TEMA_3_S5/AWS/Screenshot_38.png)
 
 Creamos el EFS:
 
-![img1](/TEMA_3_S5/AWSScreenshot_39.png)
+![img1](/TEMA_3_S5/AWS/Screenshot_39.png)
 
-![img1](/TEMA_3_S5/AWSScreenshot_40.png)
+![img1](/TEMA_3_S5/AWS/Screenshot_40.png)
 
 Asignamos la regla de entrada NFS y MYSQL al grupo de seguridad al que se unen el EFS, el RDS y el EC2:
 
@@ -179,19 +179,19 @@ Asignamos la regla de entrada NFS y MYSQL al grupo de seguridad al que se unen e
 
 Descargamos el comprimido de wordpress:
 
-![img1](/TEMA_3_S5/AWSScreenshot_53.png)
+![img1](/TEMA_3_S5/AWS/Screenshot_53.png)
 
 Extraemos el comprimido:
 
-![img1](/TEMA_3_S5/AWSScreenshot_54.png)
+![img1](/TEMA_3_S5/AWS/Screenshot_54.png)
 
 Instalamos el cliente MYSQL:
 
-![img1](/TEMA_3_S5/AWSScreenshot_57.png)
+![img1](/TEMA_3_S5/AWS/Screenshot_57.png)
 
 Nos conectamos al sistema gestor de base de datos MYSQL:
 
-![img1](/TEMA_3_S5/AWSScreenshot_55.png)
+![img1](/TEMA_3_S5/AWS/Screenshot_55.png)
 
 Creamos la base de datos para wordpress:
 
@@ -202,7 +202,7 @@ GRANT ALL PRIVILEGES ON wordpress.* TO 'wordpress_user'@'%';
 FLUSH PRIVILEGES;
 ```
 
-![img1](/TEMA_3_S5/AWSScreenshot_56.png)
+![img1](/TEMA_3_S5/AWS/Screenshot_56.png)
 
 Vamos a la interfaz web de instalación de wordpress:
 
