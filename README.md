@@ -37,4 +37,5 @@ Este repositorio incluye actividades llevadas a cabo en el módulo **_Servicios-
 |  Ejercicio  |  Descripción  |
 | ------------- | ------------- |
 | [Actividad 5](https://github.com/Ivanccampos/Servicios-de-red-e-Internet/tree/main/Tema_2_Actividad_5#actividad-5) |  Instalar y configura bin9 |
+| [Actividad S5]([https://github.com/Ivanccampos/Servicios-de-red-e-Internet/tree/main/Tema_2_Actividad_5#actividad-5](https://github.com/Ivanccampos/Servicios-de-red-e-Internet/blob/main/TEMA_3_S5/TEMA_3_S5.md)) |  Instalar Wordpress en AWS |
 
