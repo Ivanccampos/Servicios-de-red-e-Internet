@@ -171,7 +171,7 @@ Creamos el EFS:
 
 Asignamos la regla de entrada NFS y MYSQL al grupo de seguridad al que se unen el EFS, el RDS y el EC2:
 
-![image](https://github.com/user-attachments/assets/1447877b-0751-4492-a115-874ca379bdbc)
+![img1](/TEMA_3_S5/AWS/Screenshot_59.png)
 
 ---
 
@@ -206,60 +206,46 @@ FLUSH PRIVILEGES;
 
 Vamos a la interfaz web de instalación de wordpress:
 
-![image](https://github.com/user-attachments/assets/1b0747fa-e201-4eaf-9cae-7c892a616a1b)
+![img1](/TEMA_3_S5/AWS/Screenshot_61.png)
 
-Copiamos el contenido de wp-config-sample.php a wp-config.php:
-
-![image](https://github.com/user-attachments/assets/98ae3ac4-3ae9-497e-8f5e-6385bfd21c6a)
-
-Modificamos el contenido de wp-config.php:
-
-![image](https://github.com/user-attachments/assets/f7e1cb16-07ab-4b9c-ab10-27cf5b045890)
-
-Renombramos la carpeta wp-content a wp-content2:
-
-![image](https://github.com/user-attachments/assets/be004cab-4271-4bab-9f59-de877a55666d)
-
-Creamos de nuevo wp-content:
-
-![image](https://github.com/user-attachments/assets/b0a81fbf-453e-492a-9d92-8dfb05f715bf)
-
-Instalamos las dependencias de nfs:
-
-![image](https://github.com/user-attachments/assets/fa6a2374-a5af-4052-b1ca-566067233e43)
-
-Montamos el EFS en wp-content:
-
-![image](https://github.com/user-attachments/assets/51678320-84cd-423e-a1e4-e748ad2a76c6)
-
-Instalamos wordpress:
-
-![image](https://github.com/user-attachments/assets/5289795b-575f-4386-b2c7-947c3475dea9)
-
-![image](https://github.com/user-attachments/assets/de7af036-acfc-40ed-bcff-408af693f011)
-
-Nos autenticamos y accedemos:
-
-![image](https://github.com/user-attachments/assets/818a37c6-0d82-4d30-a2a5-d3a4d3602919)
+A continuación deberemos rellenar los campos con el nombre de la base de datos de RDS, el nombre de usuario y contraseña que creamos anteriormente, y el punto de enlace de la base de datos. Una vez rellenados los campos, pulsamos **Submit**.
 
 
+#### Vinculación del EFS en Wordpress (Carpeta wp-content)
 
+Detenmos primero apache con el comando:
 
+````
+sudo systemctl stop apache2
+````
 
+Movemos la carpeta **wp-content** a nuestro EFS con el comando:
 
+````
+sudo cp -r /var/www/html/wp-content Ruta_EFS
+````
 
+Podemos renombrar la carpeta original para que no se sobreescriba con el comando:
 
+````
+sudo mv /var/www/html/wp-content /var/www/html/wp-content-old
+````
 
+Creamos una vinculación de la carpeta wp-content en el EFS con el comando:
 
+````
+sudo ln -s /mnt/efs/wp-content /var/www/html/wp-content
+````
 
+Modificamos los permisos de la carpeta EFS para que el usuario apache pueda leer y escribir en ella:
 
+````
+sudo chown -R www-data:www-data /mnt/efs/wp-content
+sudo chmod -R 775 /mnt/efs/wp-content
+````
 
+Finalmente , reiniciamos apache para que se apliquen los cambios:
 
-
-
-
-
-
-
-
-
+````
+sudo systemctl start apache2
+````
