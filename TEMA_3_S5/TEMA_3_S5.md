@@ -13,7 +13,7 @@ Instalación de Wordpress en instancia Ubuntu EC2 con soporte de base de datos R
 
 Iniciamos el laboratorio de AWS:
 
-![img1](/TEMA_3_S5/AWSScreenshot_1.png)
+![img1](/TEMA_3_S5/AWS/Screenshot_1.png)
 
 Entramos al laboratorio:
 
