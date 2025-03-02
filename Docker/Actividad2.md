@@ -5,7 +5,7 @@
 ## Lleva a cabo la práctica descrita en el primer artículo
 
 ### Ejecuta la imagen "hello-world"
-![img1](/Doker/images/Screenshot_1.png)
+![img1](/Doker/Images/Screenshot_1.png)
 
 ### Muestra las imágenes Docker instaladas
 
