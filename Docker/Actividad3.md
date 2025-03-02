@@ -20,7 +20,7 @@
 ![img1](/Docker/Images/Screenshot_19.png)
 
 ### Ejecuta un contenedor hello-world y dale nombre “myhello2”
-![img1](/Docker/Images/Screenshot20.png)
+![img1](/Docker/Images/Screenshot_20.png)
 
 ### Ejecuta un contenedor hello-world y dale nombre “myhello3”
 ![img1](/Docker/Images/Screenshot_21.png)
