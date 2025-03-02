@@ -1,32 +1,33 @@
-Docker. Práctica 2
+# Docker. Práctica 2
 
 
 
-Lleva a cabo la práctica descrita en el primer artículo
-Ejecuta la imagen "hello-world"
+## Lleva a cabo la práctica descrita en el primer artículo
+
+### Ejecuta la imagen "hello-world"
+![img1](/Doker/images/Screenshot_1.png)
+
+### Muestra las imágenes Docker instaladas
+
+
+### Muestra los contenedores Docker
 
 
 
-Muestra las imágenes Docker instaladas
+## Lleva a cabo la práctica descrita en el segundo artículo
 
 
-Muestra los contenedores Docker
+### Edita el fichero Dockerfile
 
 
-
-Lleva a cabo la práctica descrita en el segundo artículo
-
-
-Edita el fichero Dockerfile
+### Construye el contenedor
 
 
-Construye el contenedor
+### Ejecútalo
 
 
-Ejecútalo
+### Create una cuenta en hub.docker.com
 
 
-Create una cuenta en hub.docker.com
+### Publícalo
 
-
-Publícalo
