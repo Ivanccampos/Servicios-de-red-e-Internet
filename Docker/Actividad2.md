@@ -45,12 +45,17 @@ La práctica consiste en subir un contenedor a dockerhub.
 
 ### Edita el fichero Dockerfile
 ![img1](/Docker/Images/Screenshot_4.png)
+.
 ![img1](/Docker/Images/Screenshot_5.png)
+.
 ![img1](/Docker/Images/Screenshot_6.png)
+.
 
 ### Construye el contenedor
 ![img1](/Docker/Images/Screenshot_7.png)
+.
 ![img1](/Docker/Images/Screenshot_8.png)
+.
 
 ### Ejecútalo
 
