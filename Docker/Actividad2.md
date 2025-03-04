@@ -39,8 +39,6 @@ docher ps -a
 
 ![img1](/Docker/Images/Screenshot_3.png)
 
-<div style="page-break-after: always;"></div>
-
 ## Lleva a cabo la práctica descrita en el segundo artículo
 
 La práctica consiste en subir un contenedor a dockerhub.
