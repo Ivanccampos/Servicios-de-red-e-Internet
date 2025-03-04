@@ -5,12 +5,38 @@
 ## Lleva a cabo la práctica descrita en el primer artículo
 
 ### Ejecuta la imagen "hello-world"
+
+Para  ejecutar la imagen "hello word" utilizamos el siguiente comando:
+`````
+docker run hello-world
+
+`````
+
 ![img1](/Docker/Images/Screenshot_1.png)
 
 ### Muestra las imágenes Docker instaladas
+
+Para  mostrar las imagenes  utilizamos el siguiente comando:
+`````
+docker images
+
+`````
+
 ![img1](/Docker/Images/Screenshot_2.png)
 
 ### Muestra los contenedores Docker
+
+Para  mostrar los contenedores utilizamos el siguiente comando:
+`````
+docker ps
+
+docher ps -a
+
+`````
+
+ps muestra los contenedores activos y ps -a muestra todos.
+
+
 ![img1](/Docker/Images/Screenshot_3.png)
 
 ## Lleva a cabo la práctica descrita en el segundo artículo
