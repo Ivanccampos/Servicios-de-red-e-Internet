@@ -41,6 +41,8 @@ ps muestra los contenedores activos y ps -a muestra todos.
 
 ## Lleva a cabo la práctica descrita en el segundo artículo
 
+La práctica consiste en subir un contenedor a dockerhub.
+
 ### Edita el fichero Dockerfile
 ![img1](/Docker/Images/Screenshot_4.png)
 ![img1](/Docker/Images/Screenshot_5.png)
