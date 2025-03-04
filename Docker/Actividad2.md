@@ -34,10 +34,12 @@ docher ps -a
 
 `````
 
-> ps muestra los contenedores activos y ps -a muestra todos.
+> 'ps' muestra los contenedores activos y 'ps -a' muestra todos.
 
 
 ![img1](/Docker/Images/Screenshot_3.png)
+
+<div style="page-break-after: always;"></div>
 
 ## Lleva a cabo la práctica descrita en el segundo artículo
 
