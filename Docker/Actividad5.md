@@ -41,14 +41,14 @@ Para crear el escenario:
 $ docker compose up -d
 ```
 
-![img1](/Docker/Images/act5/Screenshot_1.png)
+![img1](/Docker/Images/act5/Screenshot_2.png)
 
 Para listar los contenedores:
 
 ```
 $ docker compose ps
 ```
-![img1](/Docker/Images/act5/Screenshot_2.png)
+![img1](/Docker/Images/act5/Screenshot_3.png)
 
 Para parar los contenedores:
 
@@ -56,8 +56,8 @@ Para parar los contenedores:
 $ docker compose stop
 ```
 
-![img1](/Docker/Images/act5/Screenshot_3.png)
-![img1](/Docker/Images/act5/Screenshot_4.png)
+
+![img1](/Docker/Images/act5/Screenshot_5.png)
 
 Para eliminar el escenario:
 
@@ -67,11 +67,10 @@ $ docker compose down
 
 Para eliminar también el volumen usaremos `docker compose down -v`.
 
-![img1](/Docker/Images/act5/Screenshot_5.png)
+![img1](/Docker/Images/act5/Screenshot_6.png)
 
 ---
-
-![img1](/Docker/Images/act5/Screenshot_6.png)
+![img1](/Docker/Images/act5/Screenshot_4.png)
 
 ### Ejemplo 2: Despliegue de la aplicación Temperaturas
 
