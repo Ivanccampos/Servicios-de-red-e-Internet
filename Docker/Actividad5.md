@@ -69,8 +69,10 @@ Para eliminar también el volumen usaremos `docker compose down -v`.
 
 ![img1](/Docker/Images/act5/Screenshot_6.png)
 
----
+
 ![img1](/Docker/Images/act5/Screenshot_4.png)
+
+---
 
 ### Ejemplo 2: Despliegue de la aplicación Temperaturas
 
@@ -110,10 +112,11 @@ Para listar los contenedores:
 ```
 $ docker compose ps
 ```
----
+
 ![img1](/Docker/Images/act5/Screenshot_8.png)
 ![img1](/Docker/Images/act5/Screenshot_9.png)
 
+---
 
 ### Ejemplo 3: Despliegue de WordPress + Mariadb
 
