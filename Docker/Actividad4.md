@@ -33,7 +33,7 @@ Si creamos un contenedor redis con otro nombre, por ejemplo:
 ```bash
 $ docker run -d --name contenedor_redis --network red_guestbook -v /opt/redis:/data redis redis-server --appendonly yes
 ```
-![img1](/Docker/Images/ac4/Screenshot_4.png)
+![img1](/Docker/Images/act4/Screenshot_4.png)
 
 Tendremos que configurar la aplicación guestbook parea que acceda a la base de datos redis usando como nombre `contenedor_redis`, por lo tanto en la creación tendremos que definir la variable de entorno `REDIS_SERVER`, para ello ejecutamos:
 
