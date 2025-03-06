@@ -47,12 +47,12 @@ La práctica consiste en subir un contenedor a dockerhub.
 ![img1](/Docker/Images/docker/Screenshot_4.png)
 ![img1](/Docker/Images/docker/Screenshot_5.png)
 ![img1](/Docker/Images/docker/Screenshot_6.png)
-![img1](/Docker/Images/docker/Screenshot_7.png)
+
 
 
 ### Construye el contenedor
 
-![img1](/Docker/Images/Screenshot_7.png)
+![img1](/Docker/Images/docker/Screenshot_7.png)
 
 
 ### Ejecútalo
