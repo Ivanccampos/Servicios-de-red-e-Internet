@@ -77,7 +77,6 @@ $ docker run -d -p 80:80 --name ejemplo1 icarcam940050/ejemplo1:v2
 ![img1](/Docker/Images/act6/Screenshot_5.png)
 ![img1](/Docker/Images/act6/Screenshot_6.png)
 
----
 
 #### Versión 3: Desde una imagen con nginx
 
@@ -143,7 +142,7 @@ Y podemos crear un contenedor:
 ```
 $ docker run -d -p 80:80 --name ejemplo2 icarcam940050/ejemplo2:v1
 ```
-![img1](/Docker/Images/act8/Screenshot_11.png)
+![img1](/Docker/Images/act6/Screenshot_11.png)
 
 Y acceder con el navegador a nuestra página:
 
@@ -151,7 +150,7 @@ Y acceder con el navegador a nuestra página:
 
 La aplicación tiene un fichero `info.php`que me da información sobre PHP, en este caso observamos que estamos usando la versión 7.3:
 
-![img1](/Docker/Images/act6/Screenshot_.13png)
+![img1](/Docker/Images/act6/Screenshot_13.png)
 
 
 #### Versión 2: Desde una imagen con PHP instalado
@@ -250,7 +249,6 @@ EXPOSE 3000
 CMD python app.py
 ```
 
----
 Podemos crear un contenedor:
 
 ```bash
