@@ -11,7 +11,7 @@ Los dos contenedores tienen que estar en la misma red y deben tener acceso por n
 ```bash
 $ docker network create red_guestbook
 ```
-![img1](/Docker/Images/ac4/Screenshot_1.png)
+![img1](/Docker/Images/act4/Screenshot_1.png)
 Para ejecutar los contenedores:
 
 ```bash
@@ -20,9 +20,9 @@ $ docker run -d --name redis --network red_guestbook -v /opt/redis:/data redis r
 
 $ docker run -d -p 80:5000 --name guestbook --network red_guestbook iesgn/guestbook
 ```
-![img1](/Docker/Images/ac4/Screenshot_2.png)
+![img1](/Docker/Images/act4/Screenshot_2.png)
 
-![img1](/Docker/Images/ac4/Screenshot_3.png)
+![img1](/Docker/Images/act4/Screenshot_3.png)
 
 #### Configuración de la aplicación guestbook
 
@@ -52,7 +52,7 @@ Vamos a crear una red para conectar los dos contenedores:
 ```bash
 $ docker network create red_temperaturas
 ```
-![img1](/Docker/Images/ac4/Screenshot_5.png)
+![img1](/Docker/Images/act4/Screenshot_5.png)
 Para ejecutar los contenedores:
 
 ```bash
@@ -60,10 +60,10 @@ $ docker run -d --name temperaturas-backend --network red_temperaturas iesgn/tem
 
 $ docker run -d -p 80:3000 --name temperaturas-frontend --network red_temperaturas iesgn/temperaturas_frontend
 ```
-![img1](/Docker/Images/ac4/Screenshot_6.png)
-![img1](/Docker/Images/ac4/Screenshot_7.png)
+![img1](/Docker/Images/act4/Screenshot_6.png)
+![img1](/Docker/Images/act4/Screenshot_7.png)
 
-![img1](/Docker/Images/ac4/Screenshot_8.png)
+![img1](/Docker/Images/act4/Screenshot_8.png)
 
 #### Configuración de la aplicación Temperaturas
 
@@ -74,14 +74,14 @@ Si creamos un contenedor `backend` con otro nombre, por ejemplo:
 ```bash
 $ docker run -d --name temperaturas-api --network red_temperaturas iesgn/temperaturas_backend
 ```
-![img1](/Docker/Images/ac4/Screenshot_9.png)
+![img1](/Docker/Images/act4/Screenshot_9.png)
 
 Tendremos que configurar la aplicación `frontend` parea que acceda al `backend` usando como nombre `temperaturas-api`, por lo tanto en la creación tendremos que definir la variable de entorno `TEMP_SERVER`, para ello ejecutamos:
 
 ```bash
 $ docker run -d -p 80:3000 --name temperaturas-frontend -e TEMP_SERVER=temperaturas-api:5000 --network red_temperaturas iesgn/temperaturas_frontend
 ```
-![img1](/Docker/Images/ac4/Screenshot_10.png)
+![img1](/Docker/Images/act4/Screenshot_10.png)
 
 ---
 
@@ -92,7 +92,7 @@ Para la instalación de WordPress necesitamos dos contenedores: la base de datos
 ```bash
 $ docker network create red_wp
 ```
-![img1](/Docker/Images/ac4/Screenshot_11.png)
+![img1](/Docker/Images/act4/Screenshot_11.png)
 
 Siguiendo la documentación de la imagen [mariadb](https://hub.docker.com/_/mariadb) y la imagen [wordpress](https://hub.docker.com/_/wordpress) podemos ejecutar los siguientes comandos para crear los dos contenedores:
 
@@ -119,9 +119,9 @@ $ docker run -d --name servidor_wp \
 $ docker ps
 
 ```
-![img1](/Docker/Images/ac4/Screenshot_12.png)
-![img1](/Docker/Images/ac4/Screenshot_13.png)
-![img1](/Docker/Images/ac4/Screenshot_14.png)
+![img1](/Docker/Images/act4/Screenshot_12.png)
+![img1](/Docker/Images/act4/Screenshot_13.png)
+![img1](/Docker/Images/act4/Screenshot_14.png)
 
 
 ![img1](/Docker/Images/ac4/Screenshot_15.png)
