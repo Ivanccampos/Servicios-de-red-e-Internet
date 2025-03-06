@@ -124,6 +124,6 @@ $ docker ps
 ![img1](/Docker/Images/act4/Screenshot_14.png)
 
 
-![img1](/Docker/Images/ac4/Screenshot_15.png)
+![img1](/Docker/Images/act4/Screenshot_15.png)
 
 ---
