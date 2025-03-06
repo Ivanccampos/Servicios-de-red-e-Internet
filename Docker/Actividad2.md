@@ -44,11 +44,11 @@ docher ps -a
 La práctica consiste en subir un contenedor a dockerhub.
 
 ### Edita el fichero Dockerfile
+![img1](/Docker/Images/docker/Screenshot_4.png)
 ![img1](/Docker/Images/docker/Screenshot_5.png)
-.
 ![img1](/Docker/Images/docker/Screenshot_6.png)
-.
 ![img1](/Docker/Images/docker/Screenshot_7.png)
+
 
 ### Construye el contenedor
 
@@ -57,14 +57,15 @@ La práctica consiste en subir un contenedor a dockerhub.
 
 ### Ejecútalo
 .
-![img1](/Docker/Images/Screenshot_8.png)
+![img1](/Docker/Images/docker/Screenshot_8.png)
 .
-![img1](/Docker/Images/Screenshot_9.png)
+![img1](/Docker/Images/docker/Screenshot_9.png)
 
 ### Create una cuenta en hub.docker.com
 
-![img1](/Docker/Images/Screenshot_13.png)
+![img1](/Docker/Images/Screenshot_10.png)
+![img1](/Docker/Images/Screenshot_11.png)
 
 ### Publícalo
-![img1](/Docker/Images/Screenshot_14.png)
-![img1](/Docker/Images/Screenshot_12.png)
+![img1](/Docker/Images/docker/Screenshot_11.png)
+![img1](/Docker/Images/docker/Screenshot_12.png)
